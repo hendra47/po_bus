@@ -11,9 +11,17 @@
        "inIndex": false
    },
    {
-        "name": "nama",
-        "dbType": "string",
+        "name": "nominal",
+        "dbType": "integer",
         "validations": "required",
+        "htmlType": "text",
+        "searchable": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "harga_lama",
+        "dbType": "hidden",
         "htmlType": "text",
         "searchable": false,
         "inForm": false,

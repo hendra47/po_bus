@@ -30,3 +30,6 @@ Route::get('ajax/{nilai}/{kode}/{id}', ['as' => 'ajax', 'uses' => 'nilai_alterna
 
 Route::get('laporan/{id}', ['as' => 'lap', 'uses' => 'lapController@index']);
 
+
+
+Route::resource('hargas', 'hargaController');
