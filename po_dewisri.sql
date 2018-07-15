@@ -79,13 +79,14 @@ DROP TABLE IF EXISTS `harga`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `harga` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `nominal` float DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `update_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `harga_lama` float DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +95,7 @@ CREATE TABLE `harga` (
 
 LOCK TABLES `harga` WRITE;
 /*!40000 ALTER TABLE `harga` DISABLE KEYS */;
+INSERT INTO `harga` VALUES (1,9000,'abc','2018-07-15 08:52:05','2018-07-15 08:52:05',8000);
 /*!40000 ALTER TABLE `harga` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -331,4 +333,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-15 14:46:13
+-- Dump completed on 2018-07-15 15:53:49

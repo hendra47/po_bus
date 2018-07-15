@@ -26,7 +26,7 @@
 ##Pengguna Aplikasi :
 * Administrator  => Username : admin ,password : admin 
 ##Note :
-*php artisan infyom:scaffold driver --fieldsFile=vendor/infyomlabs/laravel-generator/samples/driver.json
+php artisan infyom:scaffold driver --fieldsFile=vendor/infyomlabs/laravel-generator/samples/driver.json
 *php artisan infyom:scaffold kriteria --fieldsFile=db_generator/setup_kriteria.json
 
 

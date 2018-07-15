@@ -45,6 +45,11 @@
 
 
 
+<li class="{{ Request::is('hargas*') ? 'active' : '' }}">
+    <a href="{!! route('hargas.index') !!}"><i class="fa fa-edit"></i><span>Harga</span></a>
+</li>
+
+
 
 
 

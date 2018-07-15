@@ -12,20 +12,14 @@
    },
    {
         "name": "nominal",
-        "dbType": "integer",
+        "dbType": "string",
         "validations": "required",
-        "htmlType": "text",
-        "searchable": false,
-        "inForm": false,
-        "inIndex": false
+        "htmlType": "text"
     },
     {
         "name": "harga_lama",
         "dbType": "hidden",
-        "htmlType": "text",
-        "searchable": false,
-        "inForm": false,
-        "inIndex": false
+        "htmlType": "text"
     },
     {
         "name": "keterangan",
