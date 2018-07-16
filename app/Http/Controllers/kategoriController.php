@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-
+use Illuminate\Support\Facades\DB;
 class kategoriController extends AppBaseController
 {
     /** @var  kategoriRepository */
@@ -43,7 +43,11 @@ class kategoriController extends AppBaseController
      */
     public function create()
     {
-        return view('kategoris.create');
+        $bus = DB::table('bus')
+        ->select('id','no_bus')
+        ->get();
+        return view('kategoris.create')
+                ->with('data_bus', $bus);
     }
 
     /**
@@ -95,13 +99,18 @@ class kategoriController extends AppBaseController
     {
         $kategori = $this->kategoriRepository->findWithoutFail($id);
 
+
+        $bus = DB::table('bus')
+        ->select('id','no_bus')
+        ->get();
+
         if (empty($kategori)) {
             Flash::error('Kategori not found');
 
             return redirect(route('kategoris.index'));
         }
 
-        return view('kategoris.edit')->with('kategori', $kategori);
+        return view('kategoris.edit')->with(['kategori'=>$kategori,'data_bus'=>$bus]);
     }
 
     /**

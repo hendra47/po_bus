@@ -4,10 +4,15 @@
     {!! Form::text('nama', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Id Kota Field -->
+
 <div class="form-group col-sm-6">
-    {!! Form::label('id_kota', 'Id Kota:') !!}
-    {!! Form::text('id_kota', null, ['class' => 'form-control']) !!}
+{!! Form::label('id_bus', 'Bus:') !!}
+<select class="form-control" name="id_bus">
+     <option value=""></option>
+     @foreach($data_bus as $item)
+     <option value="{{ $item->id }}">{{ $item->no_bus }}</option>
+     @endforeach
+</select>
 </div>
 
 <!-- Id Jam Field -->
@@ -30,8 +35,8 @@
 
 <!-- Id Bus Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_bus', 'Id Bus:') !!}
-    {!! Form::text('id_bus', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_kota', 'Id Kota:') !!}
+    {!! Form::text('id_kota', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
