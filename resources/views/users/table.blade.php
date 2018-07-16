@@ -2,6 +2,7 @@
 
 <table class="table table-responsive" id="users-table">
     <thead>
+        <th>Id</th>
         <th>Nik</th>
         <th>Name</th>
         <th>Username</th>
@@ -12,6 +13,8 @@
     <tbody>
     @foreach($users as $user)
         <tr>
+
+            <td>{!! $user->id !!}</td>
             <td>{!! $user->nik !!}</td>
             <td>{!! $user->name !!}</td>
             <td>{!! $user->username !!}</td>

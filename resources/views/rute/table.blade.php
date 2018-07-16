@@ -1,5 +1,7 @@
 <table class="table table-responsive" id="transaksis-table">
     <thead>
+
+        <th>Id</th>
         <th>rute</th>
         <th>keterangan</th>
         <th colspan="3">Action</th>
@@ -7,6 +9,7 @@
     <tbody>
     @foreach($rute as $ggg)
         <tr>
+            <td>{!! $ggg->id !!}</td>
             <td>{!! $ggg->rute !!}</td>
             <td>{!! $ggg->keterangan !!}</td>
             <td>

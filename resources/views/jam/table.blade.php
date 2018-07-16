@@ -1,5 +1,7 @@
 <table class="table table-responsive" id="transaksis-table">
     <thead>
+
+        <th>Id</th>
         <th>jam</th>
         <th>keterangan</th>
         <th colspan="3">Action</th>
@@ -7,6 +9,8 @@
     <tbody>
     @foreach($jam as $ggg)
         <tr>
+
+            <td>{!! $ggg->id !!}</td>
             <td>{!! $ggg->jam !!}</td>
             <td>{!! $ggg->keterangan !!}</td>
             <td>

@@ -1,5 +1,7 @@
 <table class="table table-responsive" id="kategoris-table">
     <thead>
+
+        <th>Id</th>
         <th>Nama</th>
         <th>Id Kota</th>
         <th>Id Jam</th>
@@ -11,6 +13,8 @@
     <tbody>
     @foreach($kategoris as $kategori)
         <tr>
+
+            <td>{!! $kategori->id !!}</td>
             <td>{!! $kategori->nama !!}</td>
             <td>{!! $kategori->id_kota !!}</td>
             <td>{!! $kategori->id_jam !!}</td>

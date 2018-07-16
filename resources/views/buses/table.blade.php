@@ -1,5 +1,6 @@
 <table class="table table-responsive" id="buses-table">
     <thead>
+        <th>Id</th>
         <th>No Bus</th>
         <th>Kapasitas</th>
         <th>Fasilitas</th>
@@ -9,6 +10,8 @@
     <tbody>
     @foreach($buses as $bus)
         <tr>
+
+            <td>{!! $bus->id !!}</td>
             <td>{!! $bus->no_bus !!}</td>
             <td>{!! $bus->kapasitas !!}</td>
             <td>{!! $bus->fasilitas !!}</td>
