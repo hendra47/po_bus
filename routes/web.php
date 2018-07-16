@@ -33,3 +33,24 @@ Route::get('laporan/{id}', ['as' => 'lap', 'uses' => 'lapController@index']);
 
 
 Route::resource('hargas', 'hargaController');
+
+Route::resource('hargas', 'hargaController');
+
+Route::resource('members', 'memberController');
+
+Route::resource('buses', 'busController');
+
+Route::resource('hargas', 'hargaController');
+
+
+Route::resource('kategoris', 'kategoriController');
+
+
+Route::resource('transaksis', 'transaksiController');
+
+Route::resource('kota_url', 'kotaController');
+
+
+Route::resource('jam', 'jamController');
+
+Route::resource('rute', 'ruteController');

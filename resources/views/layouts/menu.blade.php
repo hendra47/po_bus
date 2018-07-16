@@ -51,6 +51,32 @@
 
 
 
+<li class="{{ Request::is('members*') ? 'active' : '' }}">
+    <a href="{!! route('members.index') !!}"><i class="fa fa-edit"></i><span>Member</span></a>
+</li>
+
+
+<li class="{{ Request::is('buses*') ? 'active' : '' }}">
+    <a href="{!! route('buses.index') !!}"><i class="fa fa-edit"></i><span>Bus</span></a>
+</li>
+
+<li class="{{ Request::is('kategoris*') ? 'active' : '' }}">
+    <a href="{!! route('kategoris.index') !!}"><i class="fa fa-edit"></i><span>Kategori</span></a>
+</li>
+
+<li class="{{ Request::is('transaksis*') ? 'active' : '' }}">
+    <a href="{!! route('transaksis.index') !!}"><i class="fa fa-edit"></i><span>Transaksi</span></a>
+</li>
+
+<li class="{{ Request::is('kota*') ? 'active' : '' }}">
+    <a href="{!! route('kota_url.index') !!}"><i class="fa fa-edit"></i><span>Kota</span></a>
+</li>
+<li class="{{ Request::is('kota*') ? 'active' : '' }}">
+    <a href="{!! route('jam.index') !!}"><i class="fa fa-edit"></i><span>Jam</span></a>
+</li>
+<li class="{{ Request::is('kota*') ? 'active' : '' }}">
+    <a href="{!! route('rute.index') !!}"><i class="fa fa-edit"></i><span>Rute</span></a>
+</li>
 
 
 <li>
@@ -60,6 +86,9 @@
                                         {{ csrf_field() }}
                                     </form>
 </li>
+
+
+
 
 
 

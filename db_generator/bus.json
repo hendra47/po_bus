@@ -11,19 +11,25 @@
        "inIndex": false
    },
    {
-        "name": "nominal",
-        "dbType": "string",
+        "name": "no_bus",
+        "dbType": "integer",
         "validations": "required",
         "htmlType": "text"
     },
     {
-        "name": "harga_lama",
-        "dbType": "hidden",
+        "name": "kapasitas",
+        "validations": "required",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "fasilitas",
+        "validations": "required",
+        "dbType": "string",
         "htmlType": "text"
     },
     {
         "name": "keterangan",
-        "validations": "required",
         "dbType": "string",
         "htmlType": "textarea"
     }

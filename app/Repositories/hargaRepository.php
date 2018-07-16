@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class hargaRepository
  * @package App\Repositories
- * @version July 15, 2018, 8:49 am UTC
+ * @version July 15, 2018, 2:19 pm UTC
  *
  * @method harga findWithoutFail($id, $columns = ['*'])
  * @method harga find($id, $columns = ['*'])
@@ -20,7 +20,7 @@ class hargaRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        
+        'id'
     ];
 
     /**
