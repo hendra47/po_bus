@@ -46,8 +46,21 @@ class kategoriController extends AppBaseController
         $bus = DB::table('bus')
         ->select('id','no_bus')
         ->get();
+         $jam = DB::table('jam')
+        ->select('id','jam')
+        ->get();
+        $rute = DB::table('rute')
+        ->select('id','rute')
+        ->get();
+         $harga = DB::table('harga')
+        ->select('id','nominal')
+        ->get();
+        $kota = DB::table('kota')
+        ->select('id','nama')
+        ->get();
+        
         return view('kategoris.create')
-                ->with('data_bus', $bus);
+                ->with(['data_bus'=>$bus,'data_jam'=>$jam,'data_rute'=>$rute,'data_nominal'=>$harga,'data_nama'=>$kota]);
     }
 
     /**
@@ -103,6 +116,19 @@ class kategoriController extends AppBaseController
         $bus = DB::table('bus')
         ->select('id','no_bus')
         ->get();
+           $jam = DB::table('jam')
+        ->select('id','jam')
+        ->get();
+        $rute = DB::table('rute')
+        ->select('id','rute')
+        ->get();
+        $harga = DB::table('harga')
+        ->select('id','nominal')
+        ->get();
+        $kota = DB::table('kota')
+        ->select('id','nama')
+        ->get();
+
 
         if (empty($kategori)) {
             Flash::error('Kategori not found');
@@ -110,7 +136,8 @@ class kategoriController extends AppBaseController
             return redirect(route('kategoris.index'));
         }
 
-        return view('kategoris.edit')->with(['kategori'=>$kategori,'data_bus'=>$bus]);
+        return view('kategoris.edit')->with(['kategori'=>$kategori,'data_bus'=>$bus,'data_jam'=>$jam,'data_rute'=>$rute,'data_nominal'=>$harga,'data_nama'=>$kota]);
+
     }
 
     /**

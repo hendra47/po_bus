@@ -17,26 +17,48 @@
 
 <!-- Id Jam Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_jam', 'Id Jam:') !!}
-    {!! Form::text('id_jam', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_jam', 'jam:') !!}
+<select class="form-control" name="id_jam">
+     <option value=""></option>
+     @foreach($data_jam as $item)
+     <option value="{{ $item->id }}">{{ $item->jam }}</option>
+     @endforeach
+</select>
+
 </div>
 
 <!-- Id Rute Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_rute', 'Id Rute:') !!}
-    {!! Form::text('id_rute', null, ['class' => 'form-control']) !!}
+    <select class="form-control" name="id_rute">
+     <option value=""></option>
+     @foreach($data_rute as $item)
+     <option value="{{ $item->id }}">{{ $item->rute }}</option>
+     @endforeach
+</select>
+
 </div>
 
 <!-- Id Harga Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_harga', 'Id Harga:') !!}
-    {!! Form::text('id_harga', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_nominal', 'Id nominal:') !!}
+    <select class="form-control" name="id_nominal">
+     <option value=""></option>
+     @foreach($data_nominal as $item)
+     <option value="{{ $item->id }}">{{ $item->nominal }}</option>
+     @endforeach
+</select>
 </div>
 
 <!-- Id Bus Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_kota', 'Id Kota:') !!}
-    {!! Form::text('id_kota', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_nama', 'Id nama:') !!}
+    <select class="form-control" name="id_nama">
+     <option value=""></option>
+     @foreach($data_nama as $item)
+     <option value="{{ $item->id }}">{{ $item->nama }}</option>
+     @endforeach
+</select>
 </div>
 
 <!-- Submit Field -->
