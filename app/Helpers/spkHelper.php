@@ -98,6 +98,22 @@ class spkHelper{
             ->get();
         return $data[0]->kriteria;
     }
+
+    public static function kota($id){
+        $data = DB::table('kota')
+            ->select('kota.nama')
+            ->where('kota.id','=',$id)
+            ->get();
+        return $data[0]->nama;
+    }
+    public static function jam($id){
+        $data = DB::table('jam')
+            ->select('jam.jam')
+            ->where('jam.id','=',$id)
+            ->get();
+        return $data[0]->jam;
+    }
+
     public static function maxValueInArray($array, $keyToSearch)
     {
     $currentMax = NULL;

@@ -16,8 +16,8 @@
 
             <td>{!! $kategori->id !!}</td>
             <td>{!! $kategori->nama !!}</td>
-            <td>{!! $kategori->id_kota !!}</td>
-            <td>{!! $kategori->id_jam !!}</td>
+            <td>{!! App\Helpers\spkHelper::kota($kategori->id_kota) !!}</td>
+            <td>{!! App\Helpers\spkHelper::jam($kategori->id_jam) !!}</td>
             <td>{!! $kategori->id_rute !!}</td>
             <td>{!! $kategori->id_harga !!}</td>
             <td>{!! $kategori->id_bus !!}</td>
