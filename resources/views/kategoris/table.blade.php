@@ -3,11 +3,11 @@
 
         <th>Id</th>
         <th>Nama</th>
-        <th>Id Kota</th>
-        <th>Id Jam</th>
-        <th>Id Rute</th>
-        <th>Id Harga</th>
-        <th>Id Bus</th>
+        <th>Kota</th>
+        <th>Jam</th>
+        <th>Rute</th>
+        <th>Harga</th>
+        <th>Bus</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>

@@ -114,6 +114,14 @@ class spkHelper{
         return $data[0]->jam;
     }
 
+    public static function bus($id){
+        $data = DB::table('bus')
+            ->select('bus.no_bus')
+            ->where('bus.id','=',$id)
+            ->get();
+        return $data[0]->no_bus;
+    }
+
     public static function maxValueInArray($array, $keyToSearch)
     {
     $currentMax = NULL;

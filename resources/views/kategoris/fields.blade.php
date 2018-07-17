@@ -1,3 +1,5 @@
+
+<!-- {{ Request::segment(3) }} -->
 <!-- Nama Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nama', 'Nama:') !!}
@@ -8,7 +10,11 @@
 <div class="form-group col-sm-6">
 {!! Form::label('id_bus', 'Bus:') !!}
 <select class="form-control" name="id_bus">
-     <option value=""></option>
+    @if(Request::segment(3)=="edit")
+        <option value="{{$kategori->id_bus}}">{!! App\Helpers\spkHelper::bus($kategori->id_bus) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
      @foreach($data_bus as $item)
      <option value="{{ $item->id }}">{{ $item->no_bus }}</option>
      @endforeach
@@ -19,7 +25,11 @@
 <div class="form-group col-sm-6">
     {!! Form::label('id_jam', 'jam:') !!}
 <select class="form-control" name="id_jam">
-     <option value=""></option>
+    @if(Request::segment(3)=="edit")
+        <option value="{{$kategori->id_jam}}">{!! App\Helpers\spkHelper::jam($kategori->id_jam) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
      @foreach($data_jam as $item)
      <option value="{{ $item->id }}">{{ $item->jam }}</option>
      @endforeach
@@ -29,7 +39,7 @@
 
 <!-- Id Rute Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_rute', 'Id Rute:') !!}
+    {!! Form::label('id_rute', 'Rute:') !!}
     <select class="form-control" name="id_rute">
      <option value=""></option>
      @foreach($data_rute as $item)
@@ -41,8 +51,8 @@
 
 <!-- Id Harga Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_nominal', 'Id nominal:') !!}
-    <select class="form-control" name="id_nominal">
+    {!! Form::label('id_nominal', 'harga:') !!}
+    <select class="form-control" name="id_harga">
      <option value=""></option>
      @foreach($data_nominal as $item)
      <option value="{{ $item->id }}">{{ $item->nominal }}</option>
@@ -52,9 +62,13 @@
 
 <!-- Id Bus Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_nama', 'Id nama:') !!}
-    <select class="form-control" name="id_nama">
-     <option value=""></option>
+    {!! Form::label('id_nama', 'Kota:') !!}
+    <select class="form-control" name="id_kota">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$kategori->id_kota}}">{!! App\Helpers\spkHelper::kota($kategori->id_kota) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
      @foreach($data_nama as $item)
      <option value="{{ $item->id }}">{{ $item->nama }}</option>
      @endforeach
