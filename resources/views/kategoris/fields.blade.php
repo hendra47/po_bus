@@ -39,10 +39,10 @@
 
 <!-- Id Rute Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_rute', 'Rute:') !!}
-<select class="form-control" name="id_rute">
+    {!! Form::label('id_rute', 'Kota Tujuan:') !!}
+<select class="form-control" name="kota_tujuan">
     @if(Request::segment(3)=="edit")
-        <option value="{{$kategori->id_rute}}">{!! App\Helpers\spkHelper::rute($kategori->id_rute) !!}</option>
+        <option value="{{$kategori->kota_tujuan}}">{!! App\Helpers\spkHelper::rute($kategori->kota_tujuan) !!}</option>
     @else
      <option value=""></option>
     @endif
@@ -70,10 +70,10 @@
 
 <!-- Id Bus Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_nama', 'Kota:') !!}
-    <select class="form-control" name="id_kota">
+    {!! Form::label('id_nama', 'Kota_Asal:') !!}
+    <select class="form-control" name="kota_asal">
     @if(Request::segment(3)=="edit")
-        <option value="{{$kategori->id_kota}}">{!! App\Helpers\spkHelper::kota($kategori->id_kota) !!}</option>
+        <option value="{{$kategori->kota_asal}}">{!! App\Helpers\spkHelper::kota($kategori->kota_asal) !!}</option>
     @else
         <option value=""></option>
     @endif

@@ -98,7 +98,7 @@ class spkHelper{
             ->get();
         return $data[0]->kriteria;
     }
-
+    //tabel kategori/Class
     public static function kota($id){
         $data = DB::table('kota')
             ->select('kota.nama')
@@ -134,6 +134,14 @@ class spkHelper{
             ->where('rute.id','=',$id)
             ->get();
         return $data[0]->rute;
+    }
+    //tabel transaksi
+     public static function member($id){
+        $data = DB::table('member')
+            ->select('member.nama')
+            ->where('member.id','=',$id)
+            ->get();
+        return $data[0]->nama;
     }
 
     public static function maxValueInArray($array, $keyToSearch)

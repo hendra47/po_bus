@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Support\Facades\DB;
 
 class transaksiController extends AppBaseController
 {
@@ -94,6 +95,10 @@ class transaksiController extends AppBaseController
     public function edit($id)
     {
         $transaksi = $this->transaksiRepository->findWithoutFail($id);
+        $member= DB::table('member')
+        ->select('id','nama')
+        ->get();
+        //dd($member);
 
         if (empty($transaksi)) {
             Flash::error('Transaksi not found');
@@ -101,7 +106,7 @@ class transaksiController extends AppBaseController
             return redirect(route('transaksis.index'));
         }
 
-        return view('transaksis.edit')->with('transaksi', $transaksi);
+        return view('transaksis.edit')->with(['transaksi'=>$transaksi,'data_nama'=>$member]);
     }
 
     /**

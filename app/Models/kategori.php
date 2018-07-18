@@ -27,9 +27,9 @@ class kategori extends Model
 
     public $fillable = [
         'nama',
-        'id_kota',
+        'kota_asal',
         'id_jam',
-        'id_rute',
+        'kota_tujuan',
         'id_harga',
         'id_bus'
     ];
@@ -41,9 +41,9 @@ class kategori extends Model
      */
     protected $casts = [
         'nama' => 'string',
-        'id_kota' => 'integer',
+        'kota_asal' => 'integer',
         'id_jam' => 'integer',
-        'id_rute' => 'integer',
+        'kota_tujuan' => 'integer',
         'id_harga' => 'integer',
         'id_bus' => 'integer'
     ];
@@ -55,8 +55,9 @@ class kategori extends Model
      */
     public static $rules = [
         'nama' => 'required',
-        'id_kota' => 'required',
-        'id_jam' => 'required'
+        'kota_asal' => 'required',
+        'id_jam' => 'required',
+        'kota_tujuan' => 'required'
     ];
 
     

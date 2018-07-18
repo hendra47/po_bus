@@ -4,7 +4,7 @@
         <th>Id</th>
         <th>Id Kategori</th>
         <th>Tgl Berangkat</th>
-        <th>Id Member</th>
+        <th>Nama Member</th>
         <th>Jml Penumpang</th>
         <th>Total Harga</th>
         <th>Bukti Transfer</th>
@@ -18,7 +18,7 @@
             <td>{!! $transaksi->id !!}</td>
             <td>{!! $transaksi->id_kategori !!}</td>
             <td>{!! $transaksi->tgl_berangkat !!}</td>
-            <td>{!! $transaksi->id_member !!}</td>
+            <td>{!! App\Helpers\spkHelper::member($transaksi->id_member) !!}</td>
             <td>{!! $transaksi->jml_penumpang !!}</td>
             <td>{!! $transaksi->total_harga !!}</td>
             <td>{!! $transaksi->bukti_transfer !!}</td>

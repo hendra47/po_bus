@@ -3,9 +3,9 @@
 
         <th>Id</th>
         <th>Nama</th>
-        <th>Kota</th>
+        <th>Kota Asal</th>
         <th>Jam</th>
-        <th>Rute</th>
+        <th>Kota Tujuan</th>
         <th>Harga</th>
         <th>Bus</th>
         <th colspan="3">Action</th>
@@ -16,9 +16,9 @@
 
             <td>{!! $kategori->id !!}</td>
             <td>{!! $kategori->nama !!}</td>
-            <td>{!! App\Helpers\spkHelper::kota($kategori->id_kota) !!}</td>
+            <td>{!! App\Helpers\spkHelper::kota($kategori->kota_asal) !!}</td>
             <td>{!! App\Helpers\spkHelper::jam($kategori->id_jam) !!}</td>
-            <td>{!! App\Helpers\spkHelper::rute($kategori->id_rute) !!}</td>
+            <td>{!! App\Helpers\spkHelper::rute($kategori->kota_tujuan) !!}</td>
             <td>{!! App\Helpers\spkHelper::harga($kategori->id_harga) !!}</td>
             <td>{!! App\Helpers\spkHelper::bus($kategori->id_bus) !!}</td>
             <td>

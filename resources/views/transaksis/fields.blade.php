@@ -12,8 +12,19 @@
 
 <!-- Id Member Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_member', 'Id Member:') !!}
-    {!! Form::text('id_member', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_member', 'Nama Member:') !!}
+    <select class="form-control" name="id_member">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$transaksi->id_member}}">
+            {!! App\Helpers\spkHelper::member($transaksi->id_member) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
+     @foreach($data_nama as $item)
+     <option value="{{ $item->id }}">{{ $item->nama }}</option>
+     @endforeach
+</select>
+
 </div>
 
 <!-- Jml Penumpang Field -->
