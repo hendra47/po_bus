@@ -5,12 +5,12 @@ namespace App\Models;
 use Eloquent as Model;
 
 /**
- * Class kategori
+ * class kelas
  * @package App\Models
  * @version July 15, 2018, 2:31 pm UTC
  *
- * @method static kategori find($id=null, $columns = array())
- * @method static kategori|\Illuminate\Database\Eloquent\Collection findOrFail($id, $columns = ['*'])
+ * @method static kelas find($id=null, $columns = array())
+ * @method static kelas|\Illuminate\Database\Eloquent\Collection findOrFail($id, $columns = ['*'])
  * @property char nama
  * @property integer id_kota
  * @property integer id_jam
@@ -18,10 +18,10 @@ use Eloquent as Model;
  * @property integer id_harga
  * @property integer id_bus
  */
-class kategori extends Model
+class kelas extends Model
 {
 
-    public $table = 'kategori';
+    public $table = 'kelas';
     
 
 

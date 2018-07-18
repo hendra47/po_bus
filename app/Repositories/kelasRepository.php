@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\kategori;
+use App\Models\kelas;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class kategoriRepository
+ * Class kelasRepository
  * @package App\Repositories
  * @version July 15, 2018, 2:31 pm UTC
  *
- * @method kategori findWithoutFail($id, $columns = ['*'])
- * @method kategori find($id, $columns = ['*'])
- * @method kategori first($columns = ['*'])
+ * @method kelas findWithoutFail($id, $columns = ['*'])
+ * @method class find($id, $columns = ['*'])
+ * @method class first($columns = ['*'])
 */
-class kategoriRepository extends BaseRepository
+class kelasRepository extends BaseRepository
 {
     /**
      * @var array
@@ -28,6 +28,6 @@ class kategoriRepository extends BaseRepository
      **/
     public function model()
     {
-        return kategori::class;
+        return kelas::class;
     }
 }

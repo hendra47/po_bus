@@ -43,7 +43,7 @@ Route::resource('buses', 'busController');
 Route::resource('hargas', 'hargaController');
 
 
-Route::resource('kategoris', 'kategoriController');
+Route::resource('kelas', 'kelasController');
 
 
 Route::resource('transaksis', 'transaksiController');

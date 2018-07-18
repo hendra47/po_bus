@@ -60,8 +60,8 @@
     <a href="{!! route('buses.index') !!}"><i class="fa fa-edit"></i><span>Bus</span></a>
 </li>
 
-<li class="{{ Request::is('kategoris*') ? 'active' : '' }}">
-    <a href="{!! route('kategoris.index') !!}"><i class="fa fa-edit"></i><span>Class</span></a>
+<li class="{{ Request::is('kelas*') ? 'active' : '' }}">
+    <a href="{!! route('kelas.index') !!}"><i class="fa fa-edit"></i><span>Class</span></a>
 </li>
 
 <li class="{{ Request::is('transaksis*') ? 'active' : '' }}">

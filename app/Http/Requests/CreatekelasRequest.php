@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\kategori;
+use App\Models\kelas;
 
-class CreatekategoriRequest extends FormRequest
+class CreatekelasRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreatekategoriRequest extends FormRequest
      */
     public function rules()
     {
-        return kategori::$rules;
+        return kelas::$rules;
     }
 }
