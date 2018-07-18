@@ -106,6 +106,13 @@ class spkHelper{
             ->get();
         return $data[0]->nama;
     }
+    public static function harga($id){
+        $data = DB::table('harga')
+            ->select('harga.nominal')
+            ->where('harga.id','=',$id)
+            ->get();
+        return $data[0]->nominal;
+    }
     public static function jam($id){
         $data = DB::table('jam')
             ->select('jam.jam')
@@ -120,6 +127,13 @@ class spkHelper{
             ->where('bus.id','=',$id)
             ->get();
         return $data[0]->no_bus;
+    }
+    public static function rute($id){
+        $data = DB::table('rute')
+            ->select('rute.rute')
+            ->where('rute.id','=',$id)
+            ->get();
+        return $data[0]->rute;
     }
 
     public static function maxValueInArray($array, $keyToSearch)

@@ -40,8 +40,12 @@
 <!-- Id Rute Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_rute', 'Rute:') !!}
-    <select class="form-control" name="id_rute">
+<select class="form-control" name="id_rute">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$kategori->id_rute}}">{!! App\Helpers\spkHelper::rute($kategori->id_rute) !!}</option>
+    @else
      <option value=""></option>
+    @endif
      @foreach($data_rute as $item)
      <option value="{{ $item->id }}">{{ $item->rute }}</option>
      @endforeach
@@ -53,7 +57,11 @@
 <div class="form-group col-sm-6">
     {!! Form::label('id_nominal', 'harga:') !!}
     <select class="form-control" name="id_harga">
+     @if(Request::segment(3)=="edit")
+        <option value="{{$kategori->id_harga}}">{!! App\Helpers\spkHelper::harga($kategori->id_harga) !!}</option>
+    @else
      <option value=""></option>
+    @endif
      @foreach($data_nominal as $item)
      <option value="{{ $item->id }}">{{ $item->nominal }}</option>
      @endforeach

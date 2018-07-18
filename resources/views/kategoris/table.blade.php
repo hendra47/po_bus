@@ -18,9 +18,9 @@
             <td>{!! $kategori->nama !!}</td>
             <td>{!! App\Helpers\spkHelper::kota($kategori->id_kota) !!}</td>
             <td>{!! App\Helpers\spkHelper::jam($kategori->id_jam) !!}</td>
-            <td>{!! $kategori->id_rute !!}</td>
-            <td>{!! $kategori->id_harga !!}</td>
-            <td>{!! $kategori->id_bus !!}</td>
+            <td>{!! App\Helpers\spkHelper::rute($kategori->id_rute) !!}</td>
+            <td>{!! App\Helpers\spkHelper::harga($kategori->id_harga) !!}</td>
+            <td>{!! App\Helpers\spkHelper::bus($kategori->id_bus) !!}</td>
             <td>
                 {!! Form::open(['route' => ['kategoris.destroy', $kategori->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
