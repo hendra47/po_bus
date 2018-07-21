@@ -20,6 +20,15 @@ Auth::routes();
 //website
 Route::get('/website', 'WebsiteController@index');
 Route::get('/website/login', 'WebsiteController@login');
+Route::get('/website/perjalanan', 'WebsiteController@perjalanan');
+
+
+
+
+
+
+
+
 
 
 

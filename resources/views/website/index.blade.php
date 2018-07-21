@@ -1,6 +1,5 @@
 @extends('/website/layouts.app')
 
-
 @section('contentdata')
 <header class="masthead">
       <div class="container h-100">

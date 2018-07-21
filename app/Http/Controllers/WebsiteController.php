@@ -23,4 +23,8 @@ class WebsiteController extends Controller
 
         return view('website.login.index');
     }
+    public function perjalanan(){
+        return view('website.perjalanan.index');
+
+    }
 }

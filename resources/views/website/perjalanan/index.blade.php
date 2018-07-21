@@ -5,8 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <h2 class="textlogin">Ini Login Page</h2>
-            
+            <h2 class="section-heading">Ini Perjalanan Page</h2>
           </div>
         </div>
       </div>

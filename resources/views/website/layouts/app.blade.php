@@ -25,6 +25,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('theme_web/css/new-age.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('theme_web/css/new-css.css') }}" rel="stylesheet">
 
   </head>
 
