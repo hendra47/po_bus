@@ -27,4 +27,30 @@ class WebsiteController extends Controller
         return view('website.perjalanan.index');
 
     }
+    public function register(){
+        return view('website.register.index');
+
+    }
+    public function create()
+    {
+        return view('register.create');
+    }
+
+    /**
+     * Store a newly created member in storage.
+     *
+     * @param CreatememberRequest $request
+     *
+     * @return Response
+     */
+    public function store(CreatememberRequest $request)
+    {
+        $input = $request->all();
+
+        $member = $this->memberRepository->create($input);
+
+        Flash::success('Member saved successfully.');
+
+        return redirect(route('members.index'));
+    }
 }

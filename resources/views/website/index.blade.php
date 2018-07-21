@@ -6,8 +6,43 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5">New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Pesan Sekarang</a>
+
+      <div style="margin-left: -90%;">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+           <div id="utama">
+            <div id="judul">
+              Cari Tiket
+            </div>
+           <div id="inputan">
+            <form method="post">
+              <div>
+                  <input type="text" name="kota_asal" placeholder="Kota Asal" class="lg">
+                </div>
+              <div style="margin-top: 15px;">
+                  <input type="date" name="jam" placeholder="Jam" class="lg">
+                </div>
+                <div style="margin-top: 15px;">
+                  <input type="text" name="kota_tujuan" placeholder="Kota Tujuan" class="lg">
+                </div>
+              <div style="margin-top: 15px;">
+                  <input type="number" name="harga" placeholder="Harga" class="lg">
+                </div>
+              <div style="margin-top: 15px;">
+                  <input type="text" name="bus" placeholder="Bus" class="lg">
+                </div>
+              <div style="margin-top: 15px;">
+                <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Pesan Sekarang</a>
+                </div>
+              </form>
+            </div>
+    </div> 
+
+          </div>
+        </div>
+      </div>
+
+              
             </div>
           </div>
           <div class="col-lg-5 my-auto">
