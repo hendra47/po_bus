@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2018 at 02:33 PM
+-- Generation Time: Jul 21, 2018 at 07:00 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -43,7 +43,8 @@ CREATE TABLE `bus` (
 --
 
 INSERT INTO `bus` (`id`, `no_bus`, `kapasitas`, `fasilitas`, `keterangan`, `created_at`, `updated_at`) VALUES
-(1, '3243', 124324, 'sad', 'dsvd', '2018-07-15 09:45:43', '2018-07-15 09:45:43');
+(1, '324', 124324, 'sad', 'dsvd', '2018-07-15 09:45:43', '2018-07-15 09:45:43'),
+(2, '123', 456, 'dd', 'ff', '2018-07-16 13:26:37', '2018-07-16 13:26:37');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,8 @@ CREATE TABLE `harga` (
 --
 
 INSERT INTO `harga` (`id`, `nominal`, `keterangan`, `created_at`, `updated_at`, `harga_lama`) VALUES
-(1, 9000, 'abc', '2018-07-15 08:52:05', '2018-07-15 08:52:05', 8000);
+(1, 9000, 'lunas', '2018-07-15 08:52:05', '2018-07-15 08:52:05', 8000),
+(2, 3000, 'belum', '2018-07-16 13:34:35', '2018-07-16 13:34:35', 40000);
 
 -- --------------------------------------------------------
 
@@ -111,20 +113,21 @@ CREATE TABLE `jam` (
 --
 
 INSERT INTO `jam` (`id`, `jam`, `keterangan`, `created_at`, `updated_at`) VALUES
-(2, '00:00', 'dwd', '2018-07-16 08:27:07', '2018-07-16 08:27:56');
+(1, '00:00', 'dwd', '2018-07-16 08:27:07', '2018-07-16 08:27:56'),
+(2, '12:00', 'dfdfgf', '2018-07-16 13:33:47', '2018-07-16 13:33:47');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Table structure for table `kelas`
 --
 
-CREATE TABLE `kategori` (
+CREATE TABLE `kelas` (
   `id` int(10) NOT NULL,
   `nama` char(30) DEFAULT NULL,
-  `id_kota` int(11) DEFAULT NULL,
+  `kota_asal` int(11) DEFAULT NULL,
   `id_jam` int(11) DEFAULT NULL,
-  `id_rute` int(11) DEFAULT NULL,
+  `kota_tujuan` int(11) DEFAULT NULL,
   `id_harga` int(11) DEFAULT NULL,
   `id_bus` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -132,11 +135,12 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data for table `kelas`
 --
 
-INSERT INTO `kategori` (`id`, `nama`, `id_kota`, `id_jam`, `id_rute`, `id_harga`, `id_bus`, `created_at`, `updated_at`) VALUES
-(2, 'aku', 4, 3, 6, 4, 7, '2018-07-15 14:27:06', '2018-07-15 14:27:06');
+INSERT INTO `kelas` (`id`, `nama`, `kota_asal`, `id_jam`, `kota_tujuan`, `id_harga`, `id_bus`, `created_at`, `updated_at`) VALUES
+(1, 'aku', 2, 2, 1, 1, 1, '2018-07-15 14:27:06', '2018-07-18 16:18:53'),
+(3, 'budi', 1, 1, 1, 2, 2, '2018-07-18 09:07:01', '2018-07-18 09:18:48');
 
 -- --------------------------------------------------------
 
@@ -151,6 +155,14 @@ CREATE TABLE `kota` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kota`
+--
+
+INSERT INTO `kota` (`id`, `nama`, `keterangan`, `created_at`, `updated_at`) VALUES
+(1, 'jakarta', 'sdfds', '2018-07-16 13:34:47', '2018-07-16 13:34:47'),
+(2, 'bali', 'fgfh', '2018-07-16 13:35:26', '2018-07-16 13:35:26');
 
 -- --------------------------------------------------------
 
@@ -174,7 +186,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `nama`, `no_ktp`, `tgl_lahir`, `jk`, `alamat`, `created_at`, `updated_at`) VALUES
-(1, 'ergt', '54354', '1970-01-01', 'L', 'grth', '2018-07-15 09:14:55', '2018-07-15 09:14:55');
+(1, 'jaka', '54354', '1970-01-01', 'L', 'grth', '2018-07-15 09:14:55', '2018-07-15 09:14:55');
 
 -- --------------------------------------------------------
 
@@ -222,8 +234,8 @@ CREATE TABLE `rute` (
 --
 
 INSERT INTO `rute` (`id`, `rute`, `keterangan`, `created_at`, `updated_at`) VALUES
-(2, 'df', 'fdfd', '2018-07-16 08:24:58', '2018-07-16 08:28:56'),
-(3, 'fbddf', 'fd', '2018-07-16 08:26:42', '2018-07-16 08:26:42');
+(1, 'serang-tng', 'fdfd', '2018-07-16 08:24:58', '2018-07-16 08:28:56'),
+(2, 'jakarta-sby', 'sampai', '2018-07-16 08:26:42', '2018-07-16 13:49:01');
 
 -- --------------------------------------------------------
 
@@ -249,7 +261,7 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id`, `id_kategori`, `tgl_berangkat`, `id_member`, `jml_penumpang`, `total_harga`, `bukti_transfer`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, '2018-09-09 00:00:00', 2, 2, 1000, 'OK', 'y', '2018-07-15 15:10:20', '2018-07-15 15:10:20');
+(1, 1, '2018-09-09 00:00:00', 1, 2, 1000, 'OK', 'y', '2018-07-15 15:10:20', '2018-07-15 15:10:20');
 
 -- --------------------------------------------------------
 
@@ -305,9 +317,9 @@ ALTER TABLE `jam`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori`
+-- Indexes for table `kelas`
 --
-ALTER TABLE `kategori`
+ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -356,7 +368,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bus`
 --
 ALTER TABLE `bus`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hak_akses`
@@ -368,7 +380,7 @@ ALTER TABLE `hak_akses`
 -- AUTO_INCREMENT for table `harga`
 --
 ALTER TABLE `harga`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jam`
@@ -377,16 +389,16 @@ ALTER TABLE `jam`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT for table `kelas`
 --
-ALTER TABLE `kategori`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `kelas`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -404,7 +416,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `rute`
 --
 ALTER TABLE `rute`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
