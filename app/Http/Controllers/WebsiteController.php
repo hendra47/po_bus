@@ -18,4 +18,9 @@ class WebsiteController extends Controller
 
         return view('website.index');
     }
+    public function login()
+    {
+
+        return view('website.login.index');
+    }
 }

@@ -17,8 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//website
 Route::get('/website', 'WebsiteController@index');
+Route::get('/website/login', 'WebsiteController@login');
+
+
+
+Route::get('/home', 'HomeController@index');
+
 Route::resource('users', 'userController');
 
 Route::resource('hakAkses', 'hakAksesController');
