@@ -35,12 +35,12 @@
 <body class="hold-transition login-page" 
 style="background: url({{ URL::asset('/img/bg.jpg') }});
     background-repeat: no-repeat;
-    background-size: 100% 800px">
+    background-size: 100%">
     <div class="login-box">
     <div class="login-logo">
         <a href="{{ url('/home') }}">
             <p style="color: white;">Ticket BUS Online</p>
-            <b style="color: #4286f4;">PO Dewi Sri</b>
+            <b style="color: #FFFFFF;">PO Dewi Sri</b>
         </a>
     </div>
 
