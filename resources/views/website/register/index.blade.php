@@ -33,9 +33,8 @@
               <div style="margin-top: 15px;">
                 <textarea style="border: 0px;" rows="2" cols="25" name="alamat" placeholder="Alamat..."></textarea>
                 </div>
-            	<div style="margin-top: 15px;">
-            		<input type="submit" name="login" value="Login" class="btn">
-            	</div>
+                <div style="margin-top: 15px;">
+                <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Register</a>
             	{!! Form::close() !!}
             </div>
 		</div> 

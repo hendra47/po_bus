@@ -17,9 +17,8 @@
             	<div style="margin-top: 15px;">
             			<input type="password" name="pass" placeholder="Password" class="lg">
             		</div>
-            	<div style="margin-top: 15px;">
-            		<input type="submit" name="login" value="Login" class="btn">
-            	</div>
+                <div style="margin-top: 15px;">
+                <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Login</a>
             	</form>
             </div>
 		</div> 

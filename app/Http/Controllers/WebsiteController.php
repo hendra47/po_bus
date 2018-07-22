@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 class WebsiteController extends Controller
 {
     public function __construct()
@@ -16,7 +16,15 @@ class WebsiteController extends Controller
     public function index()
     {
 
-        return view('website.index');
+           $kota = DB::table('kota')
+        ->select('id','nama')
+        ->get();
+         $rute = DB::table('rute')
+        ->select('id','rute')
+        ->get();
+
+        return view('website.index')
+             ->with(['data_kota'=>$kota,'data_rute'=>$rute]);
     }
     public function login()
     {

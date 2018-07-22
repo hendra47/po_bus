@@ -14,23 +14,38 @@
             <div id="judul">
               Cari Tiket
             </div>
-           <div id="inputan">
-            <form method="post">
-              <div>
-                  <input type="text" name="kota_asal" placeholder="Kota Asal" class="lg">
-                </div>
-              <div style="margin-top: 15px;">
-                  <input type="date" name="jam" placeholder="Jam" class="lg">
-                </div>
-                <div style="margin-top: 15px;">
-                  <input type="text" name="kota_tujuan" placeholder="Kota Tujuan" class="lg">
-                </div>
-              <div style="margin-top: 15px;">
-                  <input type="number" name="harga" placeholder="Harga" class="lg">
-                </div>
-              <div style="margin-top: 15px;">
-                  <input type="text" name="bus" placeholder="Bus" class="lg">
-                </div>
+<div id="inputan">
+  <form method="post">
+    <div class="lg">
+ {!! Form::label('id_nama', 'Kota Asal:') !!}
+<select class="form-control" name="id_kota">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$kelas->kota_asal}}">{!! App\Helpers\spkHelper::kota($kelas->kota_asal) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
+     @foreach($data_kota as $item)
+     <option value="{{ $item->id }}">{{ $item->nama }}</option>
+     @endforeach
+</select>
+  </div>
+<div style="margin-top: 15px;">
+  <label>Tanggal</label>
+    <input type="date" name="jam" class="lg">
+  </div>
+  <div style="margin-top: 15px;" class="lg">
+    {!! Form::label('id_rute', 'Kota Tujuan:') !!}
+<select class="form-control" name="kota_tujuan">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$kelas->kota_tujuan}}">{!! App\Helpers\spkHelper::rute($kelas->kota_tujuan) !!}</option>
+    @else
+     <option value=""></option>
+    @endif
+     @foreach($data_rute as $item)
+     <option value="{{ $item->id }}">{{ $item->rute }}</option>
+     @endforeach
+</select>
+                 </div>
               <div style="margin-top: 15px;">
                 <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Pesan Sekarang</a>
                 </div>
