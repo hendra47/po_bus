@@ -10,6 +10,12 @@
     <p>{!! $member->nama !!}</p>
 </div>
 
+<!-- Password Field -->
+<div class="form-group">
+    {!! Form::label('password', 'Password:') !!}
+    <p>{!! $member->password !!}</p>
+</div>
+
 <!-- No Ktp Field -->
 <div class="form-group">
     {!! Form::label('no_ktp', 'No Ktp:') !!}

@@ -1,6 +1,6 @@
 <table class="table table-responsive" id="transaksis-table">
     <thead>
-
+    <tr>
         <th>Id</th>
         <th>Id Kategori</th>
         <th>Tgl Berangkat</th>
@@ -10,6 +10,7 @@
         <th>Bukti Transfer</th>
         <th>Status</th>
         <th colspan="3">Action</th>
+    </tr>
     </thead>
     <tbody>
     @foreach($transaksis as $transaksi)

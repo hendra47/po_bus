@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Flash;
 class WebsiteController extends Controller
 {
     public function __construct()
@@ -16,7 +18,7 @@ class WebsiteController extends Controller
     public function index()
     {
 
-           $kota = DB::table('kota')
+        $kota = DB::table('kota')
         ->select('id','nama')
         ->get();
          $rute = DB::table('rute')
@@ -38,7 +40,8 @@ class WebsiteController extends Controller
     public function register(){
         return view('website.register.index');
 
-    }
+    }  
+  
     public function create()
     {
         return view('register.create');
@@ -51,14 +54,16 @@ class WebsiteController extends Controller
      *
      * @return Response
      */
-    public function store(CreatememberRequest $request)
+    public function tambah(Request $request)
     {
         $input = $request->all();
-
-        $member = $this->memberRepository->create($input);
+        // dd($input);
+        // $input['nama']
+        DB::insert('insert into member (nama,password,no_ktp,tgl_lahir,jk,alamat) values (?,?,?,?,?,?)', 
+            [$input['nama'],$input['password'],$input['no_ktp'],$input['tgl_lahir'],$input['jk'],$input['alamat']]);
 
         Flash::success('Member saved successfully.');
 
-        return redirect(route('members.index'));
+       return view('website.register.index');
     }
 }

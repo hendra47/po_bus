@@ -22,6 +22,7 @@ Route::get('/website', 'WebsiteController@index');
 Route::get('/website/login', 'WebsiteController@login');
 Route::get('/website/perjalanan', 'WebsiteController@perjalanan');
 Route::get('/website/register', 'WebsiteController@register');
+Route::post('register', 'WebsiteController@tambah');
 
 
 
@@ -39,12 +40,6 @@ Route::resource('users', 'userController');
 
 Route::resource('hakAkses', 'hakAksesController');
 
-Route::get('crips-new/{id}', ['as' => 'cripsNew', 'uses' => 'cripsController@CreateNew']);
-Route::get('input-nilai/{id}/{kode}/{kriteria}/{kode_kriteria}', ['as' => 'inputNilai', 'uses' => 'nilai_alternatifController@inputNilai']);
-
-Route::get('ajax/{nilai}/{kode}/{id}', ['as' => 'ajax', 'uses' => 'nilai_alternatifController@ajax']);
-
-Route::get('laporan/{id}', ['as' => 'lap', 'uses' => 'lapController@index']);
 
 
 

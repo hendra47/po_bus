@@ -4,6 +4,12 @@
     {!! Form::text('nama', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Password Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('password', 'Password:') !!}
+    {!! Form::text('password', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- No Ktp Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('no_ktp', 'No Ktp:') !!}

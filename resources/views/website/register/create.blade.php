@@ -12,11 +12,10 @@
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'members.store']) !!}
+                   
 
                         @include('members.fields')
 
-                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

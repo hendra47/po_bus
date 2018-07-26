@@ -2,6 +2,7 @@
     <thead>
         <th>id</th>
         <th>Nama</th>
+        <th>Password</th>
         <th>No Ktp</th>
         <th>Tgl Lahir</th>
         <th>Jk</th>
@@ -14,6 +15,7 @@
 
             <td>{!! $member->id !!}</td>
             <td>{!! $member->nama !!}</td>
+            <td>{!! $member->password !!}</td>
             <td>{!! $member->no_ktp !!}</td>
             <td>{!! $member->tgl_lahir !!}</td>
             <td>{!! $member->jk !!}</td>

@@ -31,23 +31,11 @@
 
   <body id="page-top">
   @extends('website.layouts.menu')
-    @yield('contentdata')
-    <footer>
-      <div class="container">
-        <p>&copy; PO Dewisri 2018. All Rights Reserved.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#">Privacy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+   
+  @yield('contentdata')
+
+  @extends('website.layouts.footer')
+
 
     <!-- Bootstrap core JavaScript{{ asset('theme_web/vendor/jquery/jquery.min.js') }}" -->
     <script src="{{ asset('theme_web/vendor/jquery/jquery.min.js') }}"></script>
