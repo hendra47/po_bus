@@ -6,7 +6,7 @@
 
 <li class="treeview">
     <a href="#">
-    <i class="fa fa-bar-chart"></i>
+    <i class="fa fa-list"></i>
     <span>Master </span>
     <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
@@ -31,9 +31,6 @@
                 <a href="{!! route('buses.index') !!}"><i class="fa fa-circle-o"></i><span>Master Bus</span></a>
             </li>
 
-            <li class="{{ Request::is('kelas*') ? 'active' : '' }}">
-                <a href="{!! route('kelas.index') !!}"><i class="fa fa-circle-o"></i><span>Master Class</span></a>
-            </li>
 
             <li class="{{ Request::is('kota*') ? 'active' : '' }}">
                 <a href="{!! route('kota_url.index') !!}"><i class="fa fa-circle-o"></i><span>Master Kota</span></a>
@@ -48,8 +45,39 @@
 </li>
 
 
-<li class="{{ Request::is('transaksis*') ? 'active' : '' }}">
-    <a href="{!! route('transaksis.index') !!}"><i class="fa fa-edit"></i><span>Transaksi</span></a>
+
+
+<li class="treeview">
+    <a href="#">
+    <i class="fa fa-book"></i>
+    <span>Transaksi </span>
+    <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+    </span>
+    </a>
+    <ul class="treeview-menu">
+        <li class="{{ Request::is('kelas*') ? 'active' : '' }}">
+            <a href="{!! route('kelas.index') !!}"><i class="fa fa-train"></i><span>Class</span></a>
+        </li>
+        <li class="{{ Request::is('transaksis*') ? 'active' : '' }}">
+            <a href="{!! route('transaksis.index') !!}"><i class="fa fa-edit"></i><span>Order</span></a>
+        </li>
+    </ul>
+</li>
+
+<li class="treeview">
+    <a href="#">
+    <i class="fa fa-bar-chart"></i>
+    <span>Laporan </span>
+    <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+    </span>
+    </a>
+    <ul class="treeview-menu">
+        <li class="{{ Request::is('transaksis*') ? 'active' : '' }}">
+            <a href="#"><i class="fa fa-circle-o"></i><span>Laporan</span></a>
+        </li>
+    </ul>
 </li>
 
 

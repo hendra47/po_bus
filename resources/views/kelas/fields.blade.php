@@ -8,7 +8,7 @@
 
 
 
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
 {!! Form::label('id_bus', 'Bus:') !!}
 <select class="form-control" name="id_bus">
     @if(Request::segment(3)=="edit")
@@ -20,7 +20,7 @@
      <option value="{{ $item->id }}">{{ $item->no_bus }}</option>
      @endforeach
 </select>
-</div>
+</div> -->
 
 <!-- Id Jam Field -->
 <div class="form-group col-sm-6">

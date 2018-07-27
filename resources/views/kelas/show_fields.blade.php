@@ -34,9 +34,4 @@
     <p>{!! $kelas->id_harga !!}</p>
 </div>
 
-<!-- Id Bus Field -->
-<div class="form-group">
-    {!! Form::label('id_bus', 'Id Bus:') !!}
-    <p>{!! $kelas->id_bus !!}</p>
-</div>
 

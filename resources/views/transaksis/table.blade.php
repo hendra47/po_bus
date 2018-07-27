@@ -2,14 +2,12 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>Id Kategori</th>
+        <th>Id Class</th>
         <th>Tgl Berangkat</th>
-        <th>Nama Member</th>
         <th>Jml Penumpang</th>
         <th>Total Harga</th>
-        <th>Bukti Transfer</th>
-        <th>Status</th>
-        <th colspan="3">Action</th>
+        <th>No Bus</th>
+        <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -19,16 +17,16 @@
             <td>{!! $transaksi->id !!}</td>
             <td>{!! $transaksi->id_kategori !!}</td>
             <td>{!! $transaksi->tgl_berangkat !!}</td>
-            <td>{!! App\Helpers\spkHelper::member($transaksi->id_member) !!}</td>
             <td>{!! $transaksi->jml_penumpang !!}</td>
             <td>{!! $transaksi->total_harga !!}</td>
-            <td>{!! $transaksi->bukti_transfer !!}</td>
-            <td>{!! $transaksi->status !!}</td>
+            <td></td>
             <td>
                 {!! Form::open(['route' => ['transaksis.destroy', $transaksi->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                    <a href="{!! route('transaksis.show', [$transaksi->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('transaksis.edit', [$transaksi->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    <a href="{!! route('transaksis.show', [$transaksi->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-list  "></i></a>
+                    <a href="#" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-print"></i></a>
+
+                    <!-- <a href="{!! route('transaksis.edit', [$transaksi->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a> -->
                     <!-- {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
  -->                </div>
                 {!! Form::close() !!}

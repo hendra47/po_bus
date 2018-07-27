@@ -7,7 +7,7 @@
         <th>Jam</th>
         <th>Kota Tujuan</th>
         <th>Harga</th>
-        <th>Bus</th>
+        <th>Class</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
             <td>{!! App\Helpers\spkHelper::jam($ggg->id_jam) !!}</td>
             <td>{!! App\Helpers\spkHelper::rute($ggg->kota_tujuan) !!}</td>
             <td>{!! App\Helpers\spkHelper::harga($ggg->id_harga) !!}</td>
-            <td>{!! App\Helpers\spkHelper::bus($ggg->id_bus) !!}</td>
+            <td>Bisnis</td>
             <td>
                 {!! Form::open(['route' => ['kelas.destroy', $ggg->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
