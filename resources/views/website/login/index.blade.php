@@ -1,30 +1,49 @@
 @extends('/website/layouts.app')
 
 @section('contentdata')
-    <section class="download bg-primary text-center" style="height:100%">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mx-auto">
-           <div id="utama">
-           	<div id="judul">
-              Halaman Login
+<header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <div class="panel panel-default">
+                  <div class="panel-body col-lg-12">
+                    <div class="form-group col-xs-12 col-md-12">
+                        <h2 style="color:white;font-weight:bold">Login</h2>
+                    </div>
+                      <form method="post">
+                          <div class="form-group col-xs-12 col-md-12">
+                              <label for="name" class="control-label">Username</label>
+                              <input type="text" name="username" value='' class="form-control">
+                          </div>
+                          <div class="form-group col-xs-12 col-md-12">
+                              <label for="name" class="control-label">Password</label>
+                              <input type="password" name="password" value='' class="form-control">
+                          </div>
+                          <div class="form-group col-xs-12 col-md-12" style="margin-top:30px;text-align:center">
+                                  <input type="submit" class="btn btn-outline btn-xl btn-block" value="Login">
+                                  
+                          </div>
+                        </form>
+                  </div>
+              </div>  
             </div>
-           <div id="inputan">
-            <form method="post">
-            	<div>
-            			<input type="text" name="user" placeholder="Username" class="lg">
-            		</div>
-            	<div style="margin-top: 15px;">
-            			<input type="password" name="pass" placeholder="Password" class="lg">
-            		</div>
-                <div style="margin-top: 15px;">
-                <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Login</a>
-            	</form>
-            </div>
-		</div> 
+          </div>
 
+          <div class="col-lg-5 my-auto">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img src="{{ asset('theme_web/img/login.png') }}" class="img-fluid" alt="">
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </header>
 @endsection
