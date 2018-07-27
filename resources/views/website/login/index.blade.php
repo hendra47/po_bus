@@ -10,11 +10,13 @@
                   <div class="panel-body col-lg-12">
                     <div class="form-group col-xs-12 col-md-12">
                         <h2 style="color:white;font-weight:bold">Login</h2>
+                    @include('flash::message')
                     </div>
-                      <form method="post">
+
+                        {!! Form::open(['action' => 'WebsiteController@klik_login']) !!}
                           <div class="form-group col-xs-12 col-md-12">
                               <label for="name" class="control-label">Username</label>
-                              <input type="text" name="username" value='' class="form-control">
+                              <input type="text" name="nama" value='' class="form-control">
                           </div>
                           <div class="form-group col-xs-12 col-md-12">
                               <label for="name" class="control-label">Password</label>
@@ -22,9 +24,15 @@
                           </div>
                           <div class="form-group col-xs-12 col-md-12" style="margin-top:30px;text-align:center">
                                   <input type="submit" class="btn btn-outline btn-xl btn-block" value="Login">
-                                  
+                                  <?php
+                                  if (isset($input)) {
+                                      print_r($input);
+                                  }
+                                
+                                  ?>
                           </div>
-                        </form>
+                        
+            {!! Form::close() !!}
                   </div>
               </div>  
             </div>

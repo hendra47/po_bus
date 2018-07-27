@@ -20,17 +20,21 @@
               </div>
               <div class="form-group col-xs-12 col-md-12">
                     <label style="color:white" class="control-label">No Ktp</label>
-                    <input type="text" name="ktp" value='' class="form-control">
+                    <input type="number" name="no_ktp" value='' class="form-control">
               </div>
               <div class="form-group col-xs-12 col-md-12">
                     <label style="color:white" class="control-label">Tanggal Lahir</label>
-                    <input type="text" name="tgl_lahir" value='' class="form-control">
+                    <input type="date" name="tgl_lahir" value='' class="form-control">
+              </div>
+              <div class="form-group col-xs-12 col-md-12">
+                    <label style="color:white" class="control-label">Alamat</label>
+                    <input type="text" name="alamat" value='' class="form-control">
               </div>
               <div class="form-group col-xs-12 col-md-12">
                     <label style="color:white" class="control-label">Jenis Kelamin</label>
                       <div class="radio">
-                        <label><input type="radio" name="jk"><span style="color:white"> Laki-Laki</span></label>
-                        <label style="margin-left:12px"><input type="radio" name="jk"><span style="color:white"> Perempuan</span></label>
+                        <label><input type="radio" name="jk" value="P"><span style="color:white"> Laki-Laki</span></label>
+                        <label style="margin-left:12px"><input type="radio" name="jk" value="W"><span style="color:white"> Perempuan</span></label>
                       </div>
               </div>
               <div class="form-group col-xs-12 col-md-12" style="margin-top:30px;text-align:center">
