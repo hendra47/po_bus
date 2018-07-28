@@ -43,12 +43,12 @@
     {!! Form::label('id_rute', 'Kota Tujuan:') !!}
 <select class="form-control" name="kota_tujuan">
     @if(Request::segment(3)=="edit")
-        <option value="{{$kelas->kota_tujuan}}">{!! App\Helpers\spkHelper::rute($kelas->kota_tujuan) !!}</option>
+        <option value="{{$kelas->kota_tujuan}}">{!! App\Helpers\spkHelper::kota($kelas->kota_tujuan) !!}</option>
     @else
      <option value=""></option>
     @endif
-     @foreach($data_rute as $item)
-     <option value="{{ $item->id }}">{{ $item->rute }}</option>
+     @foreach($data_nama as $item)
+     <option value="{{ $item->id }}">{{ $item->nama }}</option>
      @endforeach
 </select>
 

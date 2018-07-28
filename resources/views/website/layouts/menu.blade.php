@@ -10,19 +10,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="http://localhost:8000/website">Beranda</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('website') }}">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="http://localhost:8000/website/perjalanan">Perjalanan</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/perjalanan') }}">Perjalanan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="http://localhost:8000/website">Kelas Armada</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/perjalanan') }}">Kelas Armada</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="http://localhost:8000/website/login">Login</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/login') }}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="http://localhost:8000/website/register">Register</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/register') }}">Register</a>
             </li>
           </ul>
         </div>

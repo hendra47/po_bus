@@ -65,7 +65,7 @@
       <div class="cta-content">
         <div class="container">
           <h2>Mudah Diakses<br>Dimanapun anda berada.</h2>
-          <a href="http://localhost:8000/website/login" class="btn btn-outline btn-xl js-scroll-trigger">Login</a>
+          <a href="{{ url('website/login') }}" class="btn btn-outline btn-xl js-scroll-trigger">Login</a>
         </div>
       </div>
       <div class="overlay"></div>

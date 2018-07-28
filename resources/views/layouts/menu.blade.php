@@ -38,9 +38,9 @@
             <li class="{{ Request::is('kota*') ? 'active' : '' }}">
                 <a href="{!! route('jam.index') !!}"><i class="fa fa-circle-o"></i><span>Master Jam</span></a>
             </li>
-            <li class="{{ Request::is('kota*') ? 'active' : '' }}">
+            <!-- <li class="{{ Request::is('kota*') ? 'active' : '' }}">
                 <a href="{!! route('rute.index') !!}"><i class="fa fa-circle-o"></i><span>Master Rute</span></a>
-            </li>
+            </li> -->
     </ul>
 </li>
 
