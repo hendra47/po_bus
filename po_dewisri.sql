@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2018 at 07:00 AM
+-- Generation Time: Jul 28, 2018 at 04:08 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -173,6 +173,7 @@ INSERT INTO `kota` (`id`, `nama`, `keterangan`, `created_at`, `updated_at`) VALU
 CREATE TABLE `member` (
   `id` int(10) NOT NULL,
   `nama` char(30) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
   `no_ktp` varchar(16) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
   `jk` char(1) DEFAULT NULL,
@@ -185,8 +186,8 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`id`, `nama`, `no_ktp`, `tgl_lahir`, `jk`, `alamat`, `created_at`, `updated_at`) VALUES
-(1, 'jaka', '54354', '1970-01-01', 'L', 'grth', '2018-07-15 09:14:55', '2018-07-15 09:14:55');
+INSERT INTO `member` (`id`, `nama`, `password`, `no_ktp`, `tgl_lahir`, `jk`, `alamat`, `created_at`, `updated_at`) VALUES
+(6, 'jaka', 'e10adc3949ba59abbe56e057f20f883e', '123', '2018-07-28', 'P', 'jakarta', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -404,7 +405,7 @@ ALTER TABLE `kota`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
