@@ -24,15 +24,8 @@
                           </div>
                           <div class="form-group col-xs-12 col-md-12" style="margin-top:30px;text-align:center">
                                   <input type="submit" class="btn btn-outline btn-xl btn-block" value="Login">
-                                  <?php
-                                  if (isset($input)) {
-                                      print_r($input);
-                                  }
-                                
-                                  ?>
                           </div>
-                        
-            {!! Form::close() !!}
+                        {!! Form::close() !!}
                   </div>
               </div>  
             </div>

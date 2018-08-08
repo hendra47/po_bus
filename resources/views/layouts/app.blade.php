@@ -88,7 +88,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer" style="max-height: 100px;text-align: center">
-        <strong>Copyright © 2017 <a href="#" >PO DEWISRI</a>.</strong> All rights reserved.
+        <strong>Copyright © 2018 <a href="#" >PO DEWISRI</a>.</strong> All rights reserved.
     </footer>
 
 </div>

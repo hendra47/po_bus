@@ -36,7 +36,7 @@ class bus extends Model
      * @var array
      */
     protected $casts = [
-        'no_bus' => 'integer',
+        'no_bus' => 'string',
         'kapasitas' => 'string',
         'fasilitas' => 'string',
         'keterangan' => 'string'

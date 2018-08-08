@@ -24,6 +24,7 @@ Route::get('/website/perjalanan', 'WebsiteController@perjalanan');
 Route::get('/website/register', 'WebsiteController@register');
 Route::post('website/register2', 'WebsiteController@tambah');
 Route::post('website/login2', 'WebsiteController@klik_login');
+Route::post('website/cari', 'WebsiteController@cari');
 
 
 

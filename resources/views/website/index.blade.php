@@ -10,10 +10,11 @@
                   <div class="panel-body col-lg-12">
                     <div class="form-group col-xs-12 col-md-12">
                         <h2 style="color:white;font-weight:bold">Cari Ticket</h2>
+                        @include('flash::message')
                     </div>
-                      <form method="post">
+                    {!! Form::open(['action' => 'WebsiteController@cari']) !!}
                           <div class="form-group col-xs-12 col-md-12">
-                              <label for="name" class="control-label">Line Height</label>
+                              <label for="name" class="control-label">Kota Asal</label>
                               <select class="form-control" name="id_kota">
                                                 <option value=""></option>
                                             @foreach($data_kota as $item)
@@ -26,7 +27,7 @@
                               <input type="date" value='' class="form-control">
                           </div>
                           <div class="form-group col-xs-12 col-md-12">
-                              <label for="name" class="control-label">Line Height</label>
+                              <label for="name" class="control-label">Kota Tujuan</label>
                               <select class="form-control" name="id_kota">
                                                 <option value=""></option>
                                             @foreach($data_kota as $item)
@@ -37,7 +38,7 @@
                           <div class="form-group col-xs-12 col-md-12" style="margin-top:30px;text-align:center">
                                   <input type="submit" class="btn btn-outline btn-xl btn-block" value="Pesan Sekarang">
                           </div>
-                        </form>
+                    {!! Form::close() !!}                        
                   </div>
               </div>  
             </div>

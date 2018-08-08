@@ -28,6 +28,22 @@ class WebsiteController extends Controller
         return view('website.index')
              ->with(['data_kota'=>$kota,'data_rute'=>$rute]);
     }
+
+    public function cari(Request $request)
+    {
+        $cari = $request->all();
+
+        $kota = DB::table('kota')
+        ->select('id','nama')
+        ->get();
+         $rute = DB::table('rute')
+        ->select('id','rute')
+        ->get();
+        Flash::error('Tidak ada data');
+        return view('website.index')
+             ->with(['data_kota'=>$kota,'data_rute'=>$rute]);
+    }
+
     public function login()
     {
 

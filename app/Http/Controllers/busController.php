@@ -56,7 +56,7 @@ class busController extends AppBaseController
     public function store(CreatebusRequest $request)
     {
         $input = $request->all();
-
+        
         $bus = $this->busRepository->create($input);
 
         Flash::success('Bus saved successfully.');
