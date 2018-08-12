@@ -31,7 +31,7 @@ CREATE TABLE `bus` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `bus` (
 
 LOCK TABLES `bus` WRITE;
 /*!40000 ALTER TABLE `bus` DISABLE KEYS */;
-INSERT INTO `bus` VALUES (1,'324',124324,'sad','dsvd','2018-07-15 09:45:43','2018-07-15 09:45:43'),(2,'123',456,'dd','ff','2018-07-16 13:26:37','2018-07-16 13:26:37');
+INSERT INTO `bus` VALUES (3,'B 9558 ABC',23,'AC,KAMAR MANDI','Gratis Makan','2018-08-08 14:37:41','2018-08-08 14:37:41'),(4,'B 6778 ABC',34,'TV,DVD,','-','2018-08-08 14:38:54','2018-08-12 02:33:08');
 /*!40000 ALTER TABLE `bus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,7 @@ CREATE TABLE `jam` (
 
 LOCK TABLES `jam` WRITE;
 /*!40000 ALTER TABLE `jam` DISABLE KEYS */;
-INSERT INTO `jam` VALUES (1,'00:00','dwd','2018-07-16 08:27:07','2018-07-16 08:27:56'),(2,'12:00','dfdfgf','2018-07-16 13:33:47','2018-07-16 13:33:47');
+INSERT INTO `jam` VALUES (1,'13:00','Jam 1 Siang','2018-07-16 08:27:07','2018-08-08 14:33:19'),(2,'12:00','Jam 12 Siang','2018-07-16 13:33:47','2018-08-08 14:33:31');
 /*!40000 ALTER TABLE `jam` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +136,7 @@ DROP TABLE IF EXISTS `kelas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `kelas` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nama` char(30) DEFAULT NULL,
+  `seat` int(11) DEFAULT NULL,
   `kota_asal` int(11) DEFAULT NULL,
   `id_jam` int(11) DEFAULT NULL,
   `kota_tujuan` int(11) DEFAULT NULL,
@@ -145,7 +145,7 @@ CREATE TABLE `kelas` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +154,7 @@ CREATE TABLE `kelas` (
 
 LOCK TABLES `kelas` WRITE;
 /*!40000 ALTER TABLE `kelas` DISABLE KEYS */;
-INSERT INTO `kelas` VALUES (1,'aku',2,2,1,1,1,'2018-07-15 14:27:06','2018-07-18 16:18:53'),(3,'budi',1,1,1,2,2,'2018-07-18 09:07:01','2018-07-18 09:18:48');
+INSERT INTO `kelas` VALUES (7,23,1,1,2,150000,NULL,'2018-08-12 08:59:42','2018-08-12 08:59:42'),(8,23,1,2,3,150000,NULL,'2018-08-12 09:00:06','2018-08-12 09:00:06');
 /*!40000 ALTER TABLE `kelas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +172,7 @@ CREATE TABLE `kota` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,7 +181,7 @@ CREATE TABLE `kota` (
 
 LOCK TABLES `kota` WRITE;
 /*!40000 ALTER TABLE `kota` DISABLE KEYS */;
-INSERT INTO `kota` VALUES (1,'jakarta','sdfds','2018-07-16 13:34:47','2018-07-16 13:34:47'),(2,'bali','fgfh','2018-07-16 13:35:26','2018-07-16 13:35:26');
+INSERT INTO `kota` VALUES (1,'jakarta','-','2018-07-16 13:34:47','2018-08-12 08:28:11'),(2,'bali','-','2018-07-16 13:35:26','2018-08-12 08:28:16'),(3,'Surabaya','-','2018-08-12 08:28:04','2018-08-12 08:28:04'),(4,'Medan','-','2018-08-12 08:28:23','2018-08-12 08:28:23');
 /*!40000 ALTER TABLE `kota` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,7 +203,7 @@ CREATE TABLE `member` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,7 +212,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES (6,'jaka','e10adc3949ba59abbe56e057f20f883e','123','2018-07-28','P','jakarta',NULL,NULL),(7,'agus','fdf169558242ee051cca1479770ebac3','0001','2018-07-07','P','Tangerang',NULL,NULL),(8,'hendra','e10adc3949ba59abbe56e057f20f883e','001','2018-07-14','P','tangerang',NULL,NULL);
+INSERT INTO `member` VALUES (6,'jaka','e10adc3949ba59abbe56e057f20f883e','123','2018-07-28','P','jakarta',NULL,NULL),(7,'agus','fdf169558242ee051cca1479770ebac3','0001','2018-07-07','P','Tangerang',NULL,NULL),(8,'hendra','e10adc3949ba59abbe56e057f20f883e','001','2018-07-14','P','tangerang',NULL,NULL),(9,'agus','e10adc3949ba59abbe56e057f20f883e','00019222','2018-08-12','P','Tangerang',NULL,NULL),(10,'hendra','e10adc3949ba59abbe56e057f20f883e','000988899','2018-08-12','P','Tangerang',NULL,NULL),(11,'aris','e10adc3949ba59abbe56e057f20f883e','00098999','2018-08-12','P','Tangerang',NULL,NULL);
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,17 +277,13 @@ DROP TABLE IF EXISTS `transaksi`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transaksi` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `id_kategori` int(11) DEFAULT NULL,
-  `tgl_berangkat` datetime DEFAULT NULL,
-  `id_member` int(11) DEFAULT NULL,
-  `jml_penumpang` int(11) DEFAULT NULL,
-  `total_harga` float DEFAULT NULL,
-  `bukti_transfer` varchar(255) DEFAULT NULL,
-  `status` char(20) DEFAULT NULL,
+  `id_kelas` int(11) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `no_perjalanan` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -296,8 +292,41 @@ CREATE TABLE `transaksi` (
 
 LOCK TABLES `transaksi` WRITE;
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
-INSERT INTO `transaksi` VALUES (1,1,'2018-09-09 00:00:00',1,2,1000,'OK','y','2018-07-15 15:10:20','2018-07-15 15:10:20');
+INSERT INTO `transaksi` VALUES (6,7,'2018-08-12',NULL,NULL,'2018-08-12-7');
 /*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transaksi_detail`
+--
+
+DROP TABLE IF EXISTS `transaksi_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transaksi_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_member` int(11) DEFAULT NULL,
+  `no_perjalanan` char(45) DEFAULT NULL,
+  `no_kursi` char(45) DEFAULT NULL,
+  `bayar` int(11) DEFAULT NULL,
+  `bukti_transfer` char(255) DEFAULT NULL,
+  `status` char(30) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `jam` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transaksi_detail`
+--
+
+LOCK TABLES `transaksi_detail` WRITE;
+/*!40000 ALTER TABLE `transaksi_detail` DISABLE KEYS */;
+INSERT INTO `transaksi_detail` VALUES (65,9,'2018-08-12-7','1',150000,'1534068674.png','done','2018-08-12',1,'2018-08-12 10:30:39',NULL),(66,9,'2018-08-12-7','2',150000,'1534068688.png','done','2018-08-12',1,'2018-08-12 10:30:48',NULL);
+/*!40000 ALTER TABLE `transaksi_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -341,4 +370,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-28  9:21:09
+-- Dump completed on 2018-08-12 18:05:07
