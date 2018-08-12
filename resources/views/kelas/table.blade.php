@@ -1,8 +1,7 @@
 <table class="table table-responsive" id="class-table">
     <thead>
-
         <th>Id</th>
-        <th>Nama</th>
+        <th>Jumlah Seat</th>
         <th>Kota Asal</th>
         <th>Jam</th>
         <th>Kota Tujuan</th>
@@ -15,11 +14,11 @@
         <tr>
 
             <td>{!! $ggg->id !!}</td>
-            <td>{!! $ggg->nama !!}</td>
+            <td>{!! $ggg->seat !!}</td>
             <td>{!! App\Helpers\spkHelper::kota($ggg->kota_asal) !!}</td>
             <td>{!! App\Helpers\spkHelper::jam($ggg->id_jam) !!}</td>
             <td>{!! App\Helpers\spkHelper::kota($ggg->kota_tujuan) !!}</td>
-            <td>{!! App\Helpers\spkHelper::harga($ggg->id_harga) !!}</td>
+            <td>{!! $ggg->id_harga !!}</td>
             <td>Bisnis</td>
             <td>
                 {!! Form::open(['route' => ['kelas.destroy', $ggg->id], 'method' => 'delete']) !!}

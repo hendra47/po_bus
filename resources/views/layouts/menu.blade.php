@@ -19,9 +19,6 @@
                 </li>
             @endif
 
-            <li class="{{ Request::is('hargas*') ? 'active' : '' }}">
-                <a href="{!! route('hargas.index') !!}"><i class="fa fa-circle-o"></i><span>Master Harga</span></a>
-            </li>
             <li class="{{ Request::is('members*') ? 'active' : '' }}">
                 <a href="{!! route('members.index') !!}"><i class="fa fa-circle-o"></i><span>Master Member</span></a>
             </li>

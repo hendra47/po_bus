@@ -20,6 +20,10 @@ Auth::routes();
 //website
 Route::get('/website', 'WebsiteController@index');
 Route::get('/website/login', 'WebsiteController@login');
+Route::get('/website/validasi', 'WebsiteController@validasi');
+Route::get('/website/duduk', 'WebsiteController@duduk');
+Route::get('/website/pesanan', 'WebsiteController@pesanan');
+Route::get('/website/logout', 'WebsiteController@logout');
 Route::get('/website/perjalanan', 'WebsiteController@perjalanan');
 Route::get('/website/register', 'WebsiteController@register');
 Route::post('website/register2', 'WebsiteController@tambah');

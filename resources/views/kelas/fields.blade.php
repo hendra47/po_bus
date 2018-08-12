@@ -1,26 +1,16 @@
 
 <!-- {{ Request::segment(3) }} -->
-<!-- Nama Field -->
+
+<!-- Id Jam Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('nama', 'Nama:') !!}
-    {!! Form::text('nama', null, ['class' => 'form-control']) !!}
-</div>
-
-
-
-<!-- <div class="form-group col-sm-6">
-{!! Form::label('id_bus', 'Bus:') !!}
-<select class="form-control" name="id_bus">
-    @if(Request::segment(3)=="edit")
-        <option value="{{$kelas->id_bus}}">{!! App\Helpers\spkHelper::bus($kelas->id_bus) !!}</option>
-    @else
-        <option value=""></option>
-    @endif
-     @foreach($data_bus as $item)
-     <option value="{{ $item->id }}">{{ $item->no_bus }}</option>
+    {!! Form::label('seat', 'seat:') !!}
+<select class="form-control" name="seat">
+     @foreach($kapasitas as $item)
+     <option value="{{ $item->kapasitas }}">{{ $item->kapasitas }}</option>
      @endforeach
 </select>
-</div> -->
+</div>
+
 
 <!-- Id Jam Field -->
 <div class="form-group col-sm-6">
@@ -54,19 +44,9 @@
 
 </div>
 
-<!-- Id Harga Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_nominal', 'harga:') !!}
-    <select class="form-control" name="id_harga">
-     @if(Request::segment(3)=="edit")
-        <option value="{{$kelas->id_harga}}">{!! App\Helpers\spkHelper::harga($kelas->id_harga) !!}</option>
-    @else
-     <option value=""></option>
-    @endif
-     @foreach($data_nominal as $item)
-     <option value="{{ $item->id }}">{{ $item->nominal }}</option>
-     @endforeach
-</select>
+    {!! Form::label('harga', 'harga') !!}
+    {!! Form::text('id_harga', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Id Bus Field -->

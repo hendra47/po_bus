@@ -46,6 +46,10 @@ class kelasController extends AppBaseController
         $bus = DB::table('bus')
         ->select('id','no_bus')
         ->get();
+        $kapasitas = DB::table('bus')
+        ->select('kapasitas','kapasitas')
+        ->groupby('kapasitas')
+        ->get();
          $jam = DB::table('jam')
         ->select('id','jam')
         ->get();
@@ -60,7 +64,7 @@ class kelasController extends AppBaseController
         ->get();
         
         return view('kelas.create')
-                ->with(['data_bus'=>$bus,'data_jam'=>$jam,'data_rute'=>$rute,'data_nominal'=>$harga,'data_nama'=>$kota]);
+                ->with(['kapasitas'=>$kapasitas,'data_bus'=>$bus,'data_jam'=>$jam,'data_rute'=>$rute,'data_nominal'=>$harga,'data_nama'=>$kota]);
     }
 
     /**
@@ -128,6 +132,10 @@ class kelasController extends AppBaseController
         $kota = DB::table('kota')
         ->select('id','nama')
         ->get();
+        $kapasitas = DB::table('bus')
+        ->select('kapasitas','kapasitas')
+        ->groupby('kapasitas')
+        ->get();
 
 
         if (empty($kelas)) {
@@ -136,7 +144,7 @@ class kelasController extends AppBaseController
             return redirect(route('kelas.index'));
         }
 
-        return view('kelas.edit')->with(['kelas'=>$kelas,'data_bus'=>$bus,'data_jam'=>$jam,'data_rute'=>$rute,'data_nominal'=>$harga,'data_nama'=>$kota]);
+        return view('kelas.edit')->with(['kapasitas'=>$kapasitas,'kelas'=>$kelas,'data_bus'=>$bus,'data_jam'=>$jam,'data_rute'=>$rute,'data_nominal'=>$harga,'data_nama'=>$kota]);
 
     }
 

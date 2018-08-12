@@ -26,7 +26,7 @@ class kelas extends Model
 
 
     public $fillable = [
-        'nama',
+        'seat',
         'kota_asal',
         'id_jam',
         'kota_tujuan',
@@ -40,7 +40,7 @@ class kelas extends Model
      * @var array
      */
     protected $casts = [
-        'nama' => 'string',
+        'seat' => 'integer',
         'kota_asal' => 'integer',
         'id_jam' => 'integer',
         'kota_tujuan' => 'integer',
@@ -54,7 +54,7 @@ class kelas extends Model
      * @var array
      */
     public static $rules = [
-        'nama' => 'required',
+        'seat' => 'required',
         'kota_asal' => 'required',
         'id_jam' => 'required',
         'kota_tujuan' => 'required'

@@ -8,6 +8,14 @@
             <div class="header-content mx-auto">
               <div class="panel panel-default">
                   <div class="panel-body col-lg-12">
+                    
+                    @if(!empty($kelas))
+                    <div class="form-group col-xs-12 col-md-12">
+                        <h2 style="color:white;font-weight:bold">Cari Ticket - {!! $tanggal !!}</h2>
+                        @include('flash::message')
+                    </div>
+                        @include('website.list')
+                    @else
                     <div class="form-group col-xs-12 col-md-12">
                         <h2 style="color:white;font-weight:bold">Cari Ticket</h2>
                         @include('flash::message')
@@ -15,7 +23,7 @@
                     {!! Form::open(['action' => 'WebsiteController@cari']) !!}
                           <div class="form-group col-xs-12 col-md-12">
                               <label for="name" class="control-label">Kota Asal</label>
-                              <select class="form-control" name="id_kota">
+                              <select class="form-control" name="asal">
                                                 <option value=""></option>
                                             @foreach($data_kota as $item)
                                             <option value="{{ $item->id }}">{{ $item->nama }}</option>
@@ -24,11 +32,11 @@
                           </div>
                           <div class="form-group col-xs-12 col-md-12">
                               <label for="name" class="control-label">Tanggal</label>
-                              <input type="date" value='' class="form-control">
+                              <input name="tanggal" type="date" value='' class="form-control">
                           </div>
                           <div class="form-group col-xs-12 col-md-12">
                               <label for="name" class="control-label">Kota Tujuan</label>
-                              <select class="form-control" name="id_kota">
+                              <select class="form-control" name="tujuan">
                                                 <option value=""></option>
                                             @foreach($data_kota as $item)
                                             <option value="{{ $item->id }}">{{ $item->nama }}</option>
@@ -38,7 +46,8 @@
                           <div class="form-group col-xs-12 col-md-12" style="margin-top:30px;text-align:center">
                                   <input type="submit" class="btn btn-outline btn-xl btn-block" value="Pesan Sekarang">
                           </div>
-                    {!! Form::close() !!}                        
+                    {!! Form::close() !!}    
+                    @endif                 
                   </div>
               </div>  
             </div>

@@ -24,14 +24,13 @@ class WebsiteController extends Controller
          $rute = DB::table('rute')
         ->select('id','rute')
         ->get();
-
+        $kelas=array();
         return view('website.index')
-             ->with(['data_kota'=>$kota,'data_rute'=>$rute]);
+             ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
     }
 
-    public function cari(Request $request)
+    public function pesanan()
     {
-        $cari = $request->all();
 
         $kota = DB::table('kota')
         ->select('id','nama')
@@ -39,9 +38,69 @@ class WebsiteController extends Controller
          $rute = DB::table('rute')
         ->select('id','rute')
         ->get();
-        Flash::error('Tidak ada data');
+        $kelas=array();
         return view('website.index')
-             ->with(['data_kota'=>$kota,'data_rute'=>$rute]);
+             ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+    }
+
+    public function cari(Request $request)
+    {
+        $cari = $request->all();
+        
+        $kota = DB::table('kota')
+        ->select('id','nama')
+        ->get();
+         $rute = DB::table('rute')
+        ->select('id','rute')
+        ->get();
+
+        $kelas = DB::table('kelas')
+        ->select('*')
+        ->where('kota_asal','=',$cari['asal'])
+        ->where('kota_tujuan','=',$cari['tujuan'])
+        ->get();
+        // dd($kelas);
+        
+        if(empty($cari['tanggal'])){
+            Flash::error('Tanggal Harus diisi');    
+            $kelas=array();
+            return view('website.index')
+                ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+        }
+
+
+        if(count($kelas)>0){
+        // Flash::error(' ada data');
+            return view('website.index')
+             ->with(['tanggal'=>$cari['tanggal'],'kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+        }
+
+        Flash::error('Tidak ada data');
+        
+        $kelas=array();
+        return view('website.index')
+             ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+    }
+
+    public function duduk()
+    {
+        $kota = DB::table('kota')
+        ->select('id','nama')
+        ->get();
+         $rute = DB::table('rute')
+        ->select('id','rute')
+        ->get();
+        $kelas=array();
+        
+        return view('website.index')
+             ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+    }
+
+    public function validasi()
+    {
+        Flash::error('silahkan login untuk melanjutkan pemesanan');
+
+        return view('website.login.index');
     }
 
     public function login()
@@ -49,8 +108,18 @@ class WebsiteController extends Controller
 
         return view('website.login.index');
     }
+    public function logout()
+    {
+        session(['login'=>""]);
+        return view('website.login.index');
+    }
     public function perjalanan(){
-        return view('website.perjalanan.index');
+        $buses = DB::table('bus')
+        ->select('*')
+        ->get();
+        return view('website.perjalanan.index')
+        ->with('buses', $buses);
+
 
     }
     public function register(){
@@ -100,9 +169,9 @@ class WebsiteController extends Controller
         DB::insert('insert into member (nama,password,no_ktp,tgl_lahir,jk,alamat) values (?,?,?,?,?,?)', 
             [$input['nama'],md5($input['password']),$input['no_ktp'],$input['tgl_lahir'],$input['jk'],$input['alamat']]);
 
-        Flash::success('Member saved successfully.');
+        Flash::success('Ada berhasil registrasi silahkan login.');
+        return view('website.login.index');
 
-       return view('website.register.index');
     }
     public function klik_login(Request $request){
         $input = $request->all();
@@ -122,9 +191,12 @@ class WebsiteController extends Controller
         md5($input['password'])]);
     //dd(count($users));
     if (count($users)==1) {
-        Flash::success('Login successfully.'); 
-             return view('website.login.index')
-             ->with(['input'=>$users]);       
+        session(['login'=>$users]);
+        Flash::success('Login Berhasil silahkan lanjutkan reservasi');
+        return redirect()->action('WebsiteController@index');
+        // // dd(session('login'));
+        //      return view('website.login.index')
+        //      ->with(['input'=>$users]);       
     }else{
         Flash::error('Login gagal.');
          return view('website.login.index')

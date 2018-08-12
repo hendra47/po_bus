@@ -15,12 +15,22 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ url('website/perjalanan') }}">Info Bus</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('website/login') }}">Login</a>
-            </li>
+            
+            @if(empty(session('login')))
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ url('website/register') }}">Register</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/login') }}">Login</a>
+            </li>
+            @else
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/pesanan') }}">Pesanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('website/logout') }}">Logout</a>
+            </li>
+            @endif
           </ul>
         </div>
       </div>
