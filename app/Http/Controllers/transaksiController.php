@@ -74,7 +74,12 @@ class transaksiController extends AppBaseController
      */
     public function show($id)
     {
-        $transaksi = $this->transaksiRepository->findWithoutFail($id);
+        // $transaksi = $this->transaksiRepository->findWithoutFail($id);
+        
+        $transaksi = DB::table('transaksi_detail')
+        ->select('*')
+        ->where('no_perjalanan','=',$id)
+        ->get();
 
         if (empty($transaksi)) {
             Flash::error('Transaksi not found');
@@ -82,7 +87,7 @@ class transaksiController extends AppBaseController
             return redirect(route('transaksis.index'));
         }
 
-        return view('transaksis.show')->with('transaksi', $transaksi);
+        return view('transaksis.show')->with('transaksis', $transaksi);
     }
 
     /**

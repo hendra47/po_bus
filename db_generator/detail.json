@@ -11,27 +11,30 @@
        "inIndex": false
    },
    {
-        "name": "no_bus",
+        "name": "id_member",
         "dbType": "integer",
-        "validations": "required",
         "htmlType": "text"
     },
     {
-        "name": "kapasitas",
-        "validations": "required",
+        "name": "no_perjalanan",
         "dbType": "string",
         "htmlType": "text"
     },
     {
-        "name": "fasilitas",
+        "name": "no_kursi",
         "validations": "required",
         "dbType": "string",
         "htmlType": "text"
     },
     {
-        "name": "keterangan",
+        "name": "bayar",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "bukti_transfer",
         "dbType": "string",
-        "htmlType": "textarea"
+        "htmlType": "text"
     }
  
 ]

@@ -14,33 +14,29 @@
                 <thead>
                 <tr>
                     <th>Detail Id</th>
-                    <th>Transaksi Id</th>
                     <th>Nama Penumpang</th>
                     <th>No kursi</th>
-                    <th>Bayar</th>
-                    <th>Bukti Trasnfer</th>
+                    <th>Harga</th>
+                    <th>Bukti Transfer</th>
                     <th>Status</th>
+                    <th>Update</th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($transaksis as $transaksi)
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>Joko Widodo</td>
-                        <td>1</td>                        
-                        <td>500</td>                        
-                        <td></td>                        
-                        <td>Done</td>                        
+
+                        <td>{!! $transaksi->id !!}</td>
+                        <td>{!! App\Helpers\spkHelper::member($transaksi->id_member) !!}</td>
+                        <td>{!! $transaksi->no_kursi !!}</td>
+                        <td>Rp.{!! $transaksi->bayar !!}</td>
+                        <td><img src="{{ URL::to('/photos/'.$transaksi->bukti_transfer) }}" style="height:60px;width:80px;border:1px solid gray;"></td>
+                        <td>{!! $transaksi->status !!}</td>
+                        <td>
+                            <a href="{!! route('transaksiDetails.edit', [$transaksi->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>Prabowo</td>
-                        <td>2</td>                        
-                        <td>500</td>                        
-                        <td></td>                        
-                        <td>Done</td>                        
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
             </div>

@@ -26,7 +26,18 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('theme_web/css/new-age.min.css') }}" rel="stylesheet">
     <link href="{{ asset('theme_web/css/new-css.css') }}" rel="stylesheet">
-
+  <style>
+  .duduk{
+    border:1px solid #ffffff;
+    text-align:center;
+    background-color:#7c0c9e;
+  }
+  .dipesan{
+    border:1px solid #ffffff;
+    text-align:center;
+    background-color:#000000;
+  }
+  </style>
   </head>
 
   <body id="page-top">

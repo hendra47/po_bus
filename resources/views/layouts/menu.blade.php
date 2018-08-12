@@ -72,7 +72,7 @@
     </a>
     <ul class="treeview-menu">
         <li class="{{ Request::is('transaksis*') ? 'active' : '' }}">
-            <a href="#"><i class="fa fa-circle-o"></i><span>Laporan</span></a>
+            <a href="{{ url('laporan/order') }}"><i class="fa fa-edit"></i><span>Order</span></a>
         </li>
     </ul>
 </li>
@@ -85,6 +85,7 @@
                                         {{ csrf_field() }}
                                     </form>
 </li>
+
 
 
 

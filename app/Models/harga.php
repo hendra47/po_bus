@@ -7,7 +7,7 @@ use Eloquent as Model;
 /**
  * Class harga
  * @package App\Models
- * @version July 15, 2018, 2:19 pm UTC
+ * @version August 12, 2018, 10:21 am UTC
  *
  * @method static harga find($id=null, $columns = array())
  * @method static harga|\Illuminate\Database\Eloquent\Collection findOrFail($id, $columns = ['*'])
@@ -18,7 +18,7 @@ use Eloquent as Model;
 class harga extends Model
 {
 
-    public $table = 'harga';
+    public $table = 'hargas';
     
 
 

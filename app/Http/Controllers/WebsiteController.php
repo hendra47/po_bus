@@ -32,15 +32,23 @@ class WebsiteController extends Controller
     public function pesanan()
     {
 
-        $kota = DB::table('kota')
-        ->select('id','nama')
+    $detail = DB::table('transaksi_detail')
+        ->select('*')
         ->get();
-         $rute = DB::table('rute')
-        ->select('id','rute')
+        return view('website.pesanan.index')
+             ->with(['detail'=>$detail]);
+    }
+
+    public function upload($id)
+    {
+
+    $detail = DB::table('transaksi_detail')
+        ->select('*')
+        ->where('id','=',$id)
         ->get();
-        $kelas=array();
-        return view('website.index')
-             ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+        return view('website.upload.index')
+             ->with(['id'=>$id,'detail'=>$detail]);
+
     }
 
     public function cari(Request $request)
@@ -82,8 +90,15 @@ class WebsiteController extends Controller
              ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
     }
 
-    public function duduk()
+    public function duduk($id,$tanggal)
     {
+        $no_perjalanan =$tanggal."-".$id;
+        
+        $detail = DB::table('transaksi_detail')
+        ->select('*')
+        ->where('no_perjalanan','=',$no_perjalanan)
+        ->get();
+        // dd($detail);
         $kota = DB::table('kota')
         ->select('id','nama')
         ->get();
@@ -91,9 +106,14 @@ class WebsiteController extends Controller
         ->select('id','rute')
         ->get();
         $kelas=array();
-        
+
+        $order = DB::table('kelas')
+        ->select('*')
+        ->where('id','=',$id)
+        ->get();
+        $kursi=$order[0];
         return view('website.index')
-             ->with(['kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+             ->with(['no_perjalanan'=>$no_perjalanan,'detail'=>$detail,'tanggal'=>$tanggal,'id_kelas'=>$id,'kursi'=>$kursi->seat,'kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
     }
 
     public function validasi()
@@ -202,6 +222,93 @@ class WebsiteController extends Controller
          return view('website.login.index')
          ->with(['input'=>$input]);
     }
+
+    }
+
+    public function uploadBukti(Request $request){
+        $input = $request->all();
+        // dd($input);
+        if (!isset($input['bukti'])) {
+             Flash::error('bukti Transfer Harus Diisi');
+            $detail = DB::table('transaksi_detail')
+            ->select('*')
+            ->where('id','=',$input['id'])
+            ->get();
+            return view('website.upload.index')
+                ->with(['id'=>$input['id'],'detail'=>$detail]);    
+        }
+        $photoName = time().'.'.$request->bukti->getClientOriginalExtension();
+        $request->bukti->move(public_path('photos'), $photoName);
+        // dd($photoName);
+        DB::table('transaksi_detail')
+            ->where('id', $input['id'])
+            ->update(['bukti_transfer' => $photoName,'status'=>'done']);
+
+        Flash::error('upload bukti Transfer berhasil');
+
+        $detail = DB::table('transaksi_detail')
+        ->select('*')
+        ->get();
+        return view('website.pesanan.index')
+            ->with(['detail'=>$detail]);
+
+
+
+    }
+
+    public function pilih_kursi(Request $request){
+        $req=$request->all();
+        if(empty($req['no'])){
+            Flash::error('Anda belum memlilih kursi');    
+            $kota = DB::table('kota')
+            ->select('id','nama')
+            ->get();
+             $rute = DB::table('rute')
+            ->select('id','rute')
+            ->get();
+            $kelas=array();
+            return view('website.index')
+                 ->with(['tanggal'=>$req['tanggal'],'id_kelas'=>$req['id_kelas'],'kursi'=>$req['kursi'],'kelas'=>$kelas,'data_kota'=>$kota,'data_rute'=>$rute]);
+        }
+        $no_perjalanan = $req['tanggal']."-".$req['id_kelas'];
+        $trans = DB::table('transaksi')
+            ->select('*')
+            ->where('no_perjalanan','=',$no_perjalanan)
+            ->get();
+        $jam = DB::table('kelas')
+        ->select('id_jam')
+        ->where('id','=',$req['id_kelas'])
+        ->get();
+        $harga = DB::table('kelas')
+        ->select('id_harga')
+        ->where('id','=',$req['id_kelas'])
+        ->get();
+        // dd($harga);
+
+        if(count($trans)==0){
+            DB::insert('insert into transaksi (id_kelas,tanggal,no_perjalanan) values (?,?,?)', 
+            [$req['id_kelas'],$req['tanggal'],$no_perjalanan]);
+        }
+
+        foreach ($req['no'] as $key) {
+            DB::insert('insert into transaksi_detail (id_member,no_kursi,no_perjalanan,tanggal,jam,status,bayar) values (?,?,?,?,?,?,?)', 
+            [session('login')[0]->id,$key,$no_perjalanan,$req['tanggal'],$jam[0]->id_jam,'pending',$harga[0]->id_harga]);
+        }
+
+        $header = DB::table('transaksi')
+        ->select('*')
+        ->where('no_perjalanan','=',$no_perjalanan)
+        ->get();
+
+        
+        $detail = DB::table('transaksi_detail')
+        ->select('*')
+        ->where('no_perjalanan','=',$no_perjalanan)
+        ->get();
+
+        Flash::success('Pesanan anda berhasil disimpan');
+        return view('website.booking.index')
+                ->with(['no_perjalanan'=>$no_perjalanan,'header'=>$header,'detail'=>$detail]);
 
     }
 }

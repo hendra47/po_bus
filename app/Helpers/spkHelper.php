@@ -144,6 +144,46 @@ class spkHelper{
         return $data[0]->nama;
     }
 
+    public static function total_penumpang($no){
+        $data = DB::table('transaksi_detail')
+            ->where('no_perjalanan','=',$no)
+            ->count();
+        return $data;
+    }
+
+
+
+    public static function kelas_asal($id){
+        $data = DB::table('kelas')
+            ->select('kelas.kota_asal')
+            ->where('kelas.id','=',$id)
+            ->get();
+        return $data[0]->kota_asal;
+    }
+    public static function kelas_tujuan($id){
+        $data = DB::table('kelas')
+            ->select('kelas.kota_tujuan')
+            ->where('kelas.id','=',$id)
+            ->get();
+        return $data[0]->kota_tujuan;
+    }
+
+    public static function transaksi($id){
+        $data = DB::table('transaksi')
+            ->select('transaksi.id_kelas')
+            ->where('transaksi.no_perjalanan','=',$id)
+            ->get();
+        return $data[0]->id_kelas;
+    }
+
+    public static function kelas_jam($id){
+        $data = DB::table('kelas')
+            ->select('kelas.id_jam')
+            ->where('kelas.id','=',$id)
+            ->get();
+        return $data[0]->id_jam;
+    }
+
     public static function maxValueInArray($array, $keyToSearch)
     {
     $currentMax = NULL;

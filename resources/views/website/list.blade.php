@@ -16,7 +16,7 @@
                           @if(empty(session('login')))                     
                                 <a href="{{ url('website/validasi') }}">Pesan</a>
                           @else
-                                <a href="{{ url('website/duduk') }}">Pesan</a>
+                                <a href="{{ url('website/duduk',[$bus->id,$tanggal]) }}">Pesan</a>
                           @endif
                           </td>
                       </tr>

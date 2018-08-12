@@ -17,20 +17,25 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//website
+//website uploadBukti
 Route::get('/website', 'WebsiteController@index');
 Route::get('/website/login', 'WebsiteController@login');
 Route::get('/website/validasi', 'WebsiteController@validasi');
-Route::get('/website/duduk', 'WebsiteController@duduk');
+Route::get('/website/duduk/{id}/{tgl}', 'WebsiteController@duduk');
 Route::get('/website/pesanan', 'WebsiteController@pesanan');
+Route::get('/website/upload/{id}', 'WebsiteController@upload');
 Route::get('/website/logout', 'WebsiteController@logout');
 Route::get('/website/perjalanan', 'WebsiteController@perjalanan');
 Route::get('/website/register', 'WebsiteController@register');
 Route::post('website/register2', 'WebsiteController@tambah');
 Route::post('website/login2', 'WebsiteController@klik_login');
+Route::post('website/upload-bukti', 'WebsiteController@uploadBukti');
+Route::post('website/pilih', 'WebsiteController@pilih_kursi');
 Route::post('website/cari', 'WebsiteController@cari');
 
-
+Route::post('/laporan/total', 'LaporanController@cari');
+Route::get('/laporan/total', 'LaporanController@index');
+Route::get('/laporan/order', 'LaporanController@index');
 
 
 
@@ -72,3 +77,8 @@ Route::resource('kota_url', 'kotaController');
 Route::resource('jam', 'jamController');
 
 Route::resource('rute', 'ruteController');
+
+
+Route::resource('hargas', 'hargaController');
+
+Route::resource('transaksiDetails', 'transaksi_detailController');

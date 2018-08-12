@@ -9,7 +9,13 @@
               <div class="panel panel-default">
                   <div class="panel-body col-lg-12">
                     
-                    @if(!empty($kelas))
+                    @if(!empty($kursi))
+                    <div class="form-group col-xs-12 col-md-12">
+                        <h2 style="color:white;font-weight:bold">Pilih Kursi</h2>
+                        @include('flash::message')
+                    </div>
+                     @include('website.kursi')
+                    @elseif(!empty($kelas))
                     <div class="form-group col-xs-12 col-md-12">
                         <h2 style="color:white;font-weight:bold">Cari Ticket - {!! $tanggal !!}</h2>
                         @include('flash::message')

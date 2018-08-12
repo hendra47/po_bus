@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\harga;
+use App\Models\transaksi_detail;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class hargaRepository
+ * Class transaksi_detailRepository
  * @package App\Repositories
  * @version August 12, 2018, 10:21 am UTC
  *
- * @method harga findWithoutFail($id, $columns = ['*'])
- * @method harga find($id, $columns = ['*'])
- * @method harga first($columns = ['*'])
+ * @method transaksi_detail findWithoutFail($id, $columns = ['*'])
+ * @method transaksi_detail find($id, $columns = ['*'])
+ * @method transaksi_detail first($columns = ['*'])
 */
-class hargaRepository extends BaseRepository
+class transaksi_detailRepository extends BaseRepository
 {
     /**
      * @var array
@@ -28,6 +28,6 @@ class hargaRepository extends BaseRepository
      **/
     public function model()
     {
-        return harga::class;
+        return transaksi_detail::class;
     }
 }

@@ -18,7 +18,7 @@
             <td>{!! App\Helpers\spkHelper::kota($ggg->kota_asal) !!}</td>
             <td>{!! App\Helpers\spkHelper::jam($ggg->id_jam) !!}</td>
             <td>{!! App\Helpers\spkHelper::kota($ggg->kota_tujuan) !!}</td>
-            <td>{!! $ggg->id_harga !!}</td>
+            <td>Rp.{!! $ggg->id_harga !!}</td>
             <td>Bisnis</td>
             <td>
                 {!! Form::open(['route' => ['kelas.destroy', $ggg->id], 'method' => 'delete']) !!}
